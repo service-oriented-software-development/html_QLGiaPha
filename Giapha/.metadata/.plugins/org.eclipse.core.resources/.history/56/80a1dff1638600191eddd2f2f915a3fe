@@ -1,0 +1,23 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css" >
+    <link href="css/bootstrap.icon-large.min.css" rel="stylesheet">
+	<link rel='stylesheet' href='css/all.css' >
+	<meta content="giapha, giatoc, tocpha, giaphả, giatộc, gia pha, gia toc, toc pha, gia phả, gia tộc, tộc phả,caygiapha, cay gia pha, cay gia dinh" name=keywords>
+	<meta property="og:url" content="http://www.vietnamgiapha.com" />
+	<meta property="og:title" content="Việt Nam Gia phả" />
+	<meta property="og:description" content="Nơi lưu trữ Gia phả của người Việt Nam" />
+	<meta property="og:image" content="exit.png"/>
+	<meta property="og:type" content="website" />
+	<title>Việt Nam Gia Phả</title>
+</head>
+<body>
+<h1>Like a Boss</h1>
+</body>
+</html>
