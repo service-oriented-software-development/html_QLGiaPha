@@ -1,0 +1,5 @@
+package jsoft.ads.parentage;
+
+public interface Parentage {
+
+}

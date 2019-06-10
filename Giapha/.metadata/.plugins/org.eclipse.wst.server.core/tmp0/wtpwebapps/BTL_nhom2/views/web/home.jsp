@@ -9,7 +9,7 @@
 	content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
 <link rel="stylesheet" href="<c:url value='/adcss/bootstrap.min.css'/>" />
-
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
 <link href="<c:url value='/adcss/bootstrap.css'/>" rel="stylesheet">
 <link href="<c:url value='/adcss/bootstrap.icon-large.min.css'/>"
 	rel="stylesheet" />
@@ -31,8 +31,8 @@
 
 </head>
 <body>
-	<a href='<c:url value="/dangnhap?action=login"/>'>Đăng nhập</a>
-	<a href='<c:url value="/familytree"/>'>family tree</a>
+	<!--<a href='<c:url value="/dangnhap?action=login"/>'>Đăng nhập</a>  -->
+	<!--<a href='<c:url value="/individual/view"/>'>family tree</a>  -->
 	<nav class="navbar navbar-dark bg-dark navbar-expand-sm">
 		<div class="container">
 			<a class="navbar-brand" href="#"> <img
@@ -50,27 +50,37 @@
 							là gì</a></li>
 					<li class="nav-item"><a class="nav-link" href="#">Hướng
 							dẫn làm gia phả</a></li>
-					<li class="nav-item"><a class="nav-link" href="#"
-						onclick="open_login()">Đăng nhập</a></li>
+					<% 
+						if(request.getSession().getAttribute("Loginned")!=null){
+							out.print("<li class=\"nav-item\">");
+							out.print("<a class=\"nav-link\" href=\"#\" onclick=\"logout()\">Đăng Xuất</a>");
+							out.print("</li>");
+						}else{
+							out.print("<li class=\"nav-item\">");
+							out.print("<a class=\"nav-link\" href=\"#\" onclick=\"open_login()\">Đăng nhập</a>");
+							out.print("<ul><li></li></ul>");
+							out.print("</li>");
+						}
+					%>
 				</ul>
 			</div>
 		</div>
 	</nav>
-	<!-- HEADER NAV - END -->
-	<nav class="navbar navbar-light bg-light navbar-expand-sm">
-		<div class="container">
-			<div class="input-group">
-				<input type="text" id="name" class="form-control"
-					placeholder="Tìm theo tên tộc họ" aria-label="Tìm"
-					aria-describedby="button-addon2">
-				<div class="input-group-append">
-					<button class="btn btn-info" type="button" onclick="loadGp()"
-						id="search_id">Tìm kiếm</button>
+
+		<nav class="navbar navbar-light bg-light navbar-expand-sm">
+			<div class="container">
+				<div class="input-group">
+					<input type="text" id="name" class="form-control"
+						placeholder="Tìm theo tên tộc họ" aria-label="Tìm"
+						aria-describedby="button-addon2">
+					<div class="input-group-append">
+						<button class="btn btn-info" type="button" onclick="loadGp()"
+							id="search_id">Tìm kiếm</button>
+					</div>
 				</div>
 			</div>
-		</div>
-	</nav>
-
+		</nav>
+	
 
 
 	<div class="container-fluid content-row" id="list_gp">
@@ -101,6 +111,7 @@
 	}
 	
 	$(document).ready(function() {
+		
 		$('#search_id').keypress(function(event){
 			var keycode = (event.keyCode ? event.keyCode : event.which);
 			if(keycode == '13' ||keycode ==13){
@@ -128,9 +139,10 @@ loadGp();
 	});
 	
 	function loadGp(){
+		//Console.log("loadgp");
 		$("#list_gp").html('<img src="<c:url value='/adimgs/loading1.gif'/>">');
 		var name = $("#name").val();
-		var url = "http://localhost:8080/adv/familytree?name="+name+"";
+		var url = "http://localhost:8080/adv/parentage/view?name="+name;
 		var request;
 		
 		if (window.XMLHttpRequest) {
@@ -212,22 +224,11 @@ loadGp();
 	}
 	
 	function logout()
-	{
-		// ajax
-        $.ajax({
-			url : "login.php",
-            type : "POST",
-			data: {func:"logout"},
-            success: function(datastr) {
-				data = JSON.parse(datastr);
-				if( data.status=='ok'){
-					location.reload();
-				}
-            },
-            error: function(jqXHR, textStatus, errorThrown) {
-				alert('Error '+ textStatus);
-            }
-        });
+	{	
+		var mess = "Bạn có thực sự muốn đăng xuất khỏi hệ thống";
+		if(window.confirm(mess)){
+			window.location.href = "/adv/view?action=logout";
+		}
 	}
 	function isEmail(email) {
 		var regex = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;

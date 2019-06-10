@@ -1,0 +1,44 @@
+package jsoft.ads.parentage;
+
+import java.sql.ResultSet;
+
+import jsoft.ads.object.ParentageObject;
+
+public class ParentageImpl implements Parentage {
+
+	public boolean addParentage(ParentageObject item) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	public boolean editParentage(ParentageObject item) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	public boolean delParentage(ParentageObject item) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	public ResultSet getChild(int id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public ResultSet getParentage(int id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public ResultSet getParentages() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public ResultSet getParentages(ParentageObject similar, int at, byte total) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

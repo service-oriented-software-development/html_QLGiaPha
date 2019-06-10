@@ -1,0 +1,93 @@
+package jsoft.ads.account;
+
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
+
+import Common.ConnectionPool;
+import jsoft.ads.object.UserObject;
+
+public class AccountControl {
+	AccountImpl us;
+
+	public AccountControl(ConnectionPool cp) {
+		super();
+		this.us = new AccountImpl(cp);
+	}
+	public boolean addUser(UserObject item) {
+		return this.us.addUser(item);
+	}
+
+	public boolean editUser(UserObject item) {
+		
+		return this.us.editUser(item);
+	}
+
+	public boolean delUser(UserObject item) {
+		return this.us.delUser(item);
+	}
+
+	public UserObject getUser(int id) {
+		ResultSet rs = this.us.getUser(id);
+		UserObject item = new UserObject();
+		if(rs!=null) {
+			try {
+				if(rs.next()) {
+					item.setUsername(rs.getString("username"));
+					item.setUserpass(rs.getString("userpass"));
+				}
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+		return item;
+	}
+
+	public UserObject getUser(String username, String userpass) {
+		
+		ResultSet rs = this.us.getUser(username, userpass);
+		UserObject item = new UserObject();
+		if(rs!=null) {
+			try {
+				if(rs.next()) {
+					item.setUsername(rs.getString("username"));
+					item.setUserpass(rs.getString("userpass"));
+				}
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+		return item;
+	}
+
+	public ArrayList<UserObject> getUsers(UserObject similar, int page, byte total) {
+		int at = (page-1)*total;
+		ResultSet rs = this.us.getUsers(similar, at, total);
+		ArrayList<UserObject> items = new ArrayList<UserObject>();
+		if(rs!=null) {
+			try {
+				while(rs.next()) {
+					UserObject item = new UserObject();
+					item.setUsername(rs.getString("username"));
+					item.setUserpass(rs.getString("userpass"));
+					items.add(item);
+				}
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+		return items;
+		
+	}
+	public ConnectionPool getCP() {	
+		return this.us.getCP();
+	}
+
+	public void releaseConnection() {
+		this.us.releaseConnection();
+	}
+}

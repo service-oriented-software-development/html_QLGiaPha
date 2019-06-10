@@ -1,24 +1,26 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<meta charset="utf-8">
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<!doctype html>
+<html >
+  <head>
+
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="adcss/bootstrap.min.css">
-    <link href="adcss/bootstrap.icon-large.min.css" rel="stylesheet">
-	<link rel='stylesheet' href='adcss/all.css'>
-	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+    
+    <link rel="stylesheet" href="<c:url value='/adcss/bootstrap.min.css'/>"/>
+    <link href="<c:url value='/adcss/bootstrap.icon-large.min.css'/>" rel="stylesheet"/>
+	<link rel='stylesheet' href="<c:url value='adcss/all.css'/>"/>
+	
 	<meta content="giapha, giatoc, tocpha, giaphả, giatộc, gia pha, gia toc, toc pha, gia phả, gia tộc, tộc phả,caygiapha, cay gia pha, cay gia dinh" name=keywords>
 	<title>Editor</title>
-</head>
-<body>
-<nav class="navbar navbar-dark bg-dark navbar-expand-sm">
+  </head>
+  <body >
+	<!-- HEADER NAV - BEGIN -->
+	<nav class="navbar navbar-dark bg-dark navbar-expand-sm">
 	  <div class="container">
 		<a class="navbar-brand" href="#">
-			<img src="adimgs/exit.png" alt="vietnamgiapha">Editor
+			<img src="<c:url value='/adimgs/exit.png'/>" alt="vietnamgiapha"/>Editor
 		</a>
 		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-list-11" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
 		  <span class="navbar-toggler-icon"></span>
@@ -26,7 +28,7 @@
 		<div class="collapse navbar-collapse" id="navbar-list-11">
 		  <ul class="navbar-nav ml-auto">
 			<li class="nav-item active">
-			  <a class="nav-link" href="#" onclick="loadGpInfo();"><span class="glyphicon glyphicon-envelope"></span> Thông tin gia phả</a>
+			  <a class="nav-link" href="Editor.html" onclick="loadGpInfo();"><span class="glyphicon glyphicon-envelope"></span> Thông tin gia phả</a>
 			</li>
 			<li class="nav-item">
 			  <a class="nav-link" href="#" onclick="loadInfo(1);"><span class="glyphicon glyphicon-envelope"></span> Thủy tổ</a>
@@ -44,7 +46,7 @@
 			  <a class="nav-link" href="#" onclick="loadInfo(4);"><span class="glyphicon glyphicon-envelope"></span> Hương hỏa</a>
 			</li>
 			<li class="nav-item">
-			  <a class="nav-link" href="../" ><span class="glyphicon glyphicon-envelope"></span> Trở về Home</a>
+			  <a class="nav-link" href="main.html" ><span class="glyphicon glyphicon-envelope"></span> Trở về Home</a>
 			</li>
 		  </ul>
 		</div>
@@ -61,7 +63,7 @@
 					<div class="form-group form-float">
 						<div class="form-line">
 							<select name="AREAS_ID" id="AREAS_ID" >
-<option value='1'>Quảng Nam </option><option value='2'>Đà Nẵng </option><option value='3'>Sài Gòn </option><option value='4'>Hà Nội </option><option value='5'>An Giang </option><option value='6'>Bà Rịa Vũng Tàu </option><option value='7'>Bạc Liêu </option><option value='8'>Bắc Cạn </option><option value='9'>Bắc Giang </option><option value='10'>Bắc Ninh </option><option value='11'>Bến Tre </option><option value='12'>Bình Dương </option><option value='13'>Bình Định </option><option value='14'>Bình Dương </option><option value='15'>Bình Định </option><option value='16'>Bình Phước </option><option value='17'>Bình Thuận </option><option value='18'>Cà Mau </option><option value='19'>Cao Bằng </option><option value='20'>Cần Thơ </option><option value='21'>Đắc Lắc </option><option value='22'>Đồng Nai </option><option value='23'>Đồng Tháp </option><option value='24'>Gia Lai </option><option value='25'>Hà Giang </option><option value='26'>Hà Nam </option><option value='27'>Hà Tây </option><option value='28'>Hà Tĩnh </option><option value='29'>Hải Dương </option><option value='30'>Hải Phòng </option><option value='31'>Hòa Bình </option><option value='32'>Hưng Yên </option><option value='33'>Khánh Hòa </option><option value='34'>Kiên Giang </option><option value='35'>Kon Tum </option><option value='36'>Lai Châu </option><option value='37'>Lâm Đồng </option><option value='38'>Lạng Sơn </option><option value='39'>Lào Cai </option><option value='40'>Long An </option><option value='41'>Nam Định </option><option value='42'>Nghệ An </option><option value='43'>Ninh Bình </option><option value='44'>Ninh Thuận </option><option value='45'>Phú Yên </option><option value='46'>Phú Thọ </option><option value='47'>Quảng Bình </option><option value='48'>Quảng Ngãi </option><option value='49'>Quảng Ninh </option><option value='50'>Quảng Trị </option><option value='51'>Sóc Trăng </option><option value='52'>Sơn La </option><option value='53'>Tây Ninh </option><option value='54'>Thái Bình </option><option value='55'>Thái Nguyên </option><option value='56'>Thanh Hóa </option><option value='57'>Thừa Thiên Huế </option><option value='58'>Tiền Giang </option><option value='59'>Trà Vinh </option><option value='60'>Tuyên Quang </option><option value='61'>Vĩnh Long </option><option value='62'>Vĩnh Phúc </option><option value='63'>Yên Bái </option>							<select>
+<option value='1'>Quảng Nam</option><option value='2'>Đà Nẵng</option><option value='3'>Sài Gòn</option><option value='4'>Hà Nội</option><option value='5'>An Giang</option><option value='6'>Bà Rịa Vũng Tàu</option><option value='7'>Bạc Liêu </option><option value='8'>Bắc Cạn </option><option value='9'>Bắc Giang </option><option value='10'>Bắc Ninh </option><option value='11'>Bến Tre </option><option value='12'>Bình Dương </option><option value='13'>Bình Định </option><option value='14'>Bình Dương </option><option value='15'>Bình Định </option><option value='16'>Bình Phước </option><option value='17'>Bình Thuận </option><option value='18'>Cà Mau </option><option value='19'>Cao Bằng </option><option value='20'>Cần Thơ </option><option value='21'>Đắc Lắc </option><option value='22'>Đồng Nai </option><option value='23'>Đồng Tháp </option><option value='24'>Gia Lai </option><option value='25'>Hà Giang </option><option value='26'>Hà Nam </option><option value='27'>Hà Tây </option><option value='28'>Hà Tĩnh </option><option value='29'>Hải Dương </option><option value='30'>Hải Phòng </option><option value='31'>Hòa Bình </option><option value='32'>Hưng Yên </option><option value='33'>Khánh Hòa </option><option value='34'>Kiên Giang </option><option value='35'>Kon Tum </option><option value='36'>Lai Châu </option><option value='37'>Lâm Đồng </option><option value='38'>Lạng Sơn </option><option value='39'>Lào Cai </option><option value='40'>Long An </option><option value='41'>Nam Định </option><option value='42'>Nghệ An </option><option value='43'>Ninh Bình </option><option value='44'>Ninh Thuận </option><option value='45'>Phú Yên </option><option value='46'>Phú Thọ </option><option value='47'>Quảng Bình </option><option value='48'>Quảng Ngãi </option><option value='49'>Quảng Ninh </option><option value='50'>Quảng Trị </option><option value='51'>Sóc Trăng </option><option value='52'>Sơn La </option><option value='53'>Tây Ninh </option><option value='54'>Thái Bình </option><option value='55'>Thái Nguyên </option><option value='56'>Thanh Hóa </option><option value='57'>Thừa Thiên Huế </option><option value='58'>Tiền Giang </option><option value='59'>Trà Vinh </option><option value='60'>Tuyên Quang </option><option value='61'>Vĩnh Long </option><option value='62'>Vĩnh Phúc </option><option value='63'>Yên Bái </option></select>
 							<span class="help-block"></span>
 						</div>
 					</div>
@@ -69,7 +71,7 @@
 				<div class="col-sm-12">
 					<div class="form-group form-float">
 						<div class="form-line">
-							<input type="text" name="RF_NAME" id="RF_NAME" class="form-control" placeholder="Tên gia phả">
+							Tên gia phả<input type="text" name="RF_NAME" id="RF_NAME" class="form-control" placeholder="Tên gia phả">
 							<span class="help-block"></span>
 						</div>
 					</div>
@@ -77,7 +79,7 @@
 				<div class="col-sm-12">
 					<div class="form-group form-float">
 						<div class="form-line">
-							<input type="text" name="RF_OTAI" id="RF_OTAI" class="form-control" placeholder="Ở tại">
+							Tên gia phả<input type="text" name="Ancestor" id="Ancestor" class="form-control" placeholder="Thủy tổ">
 							<span class="help-block"></span>
 						</div>
 					</div>
@@ -85,7 +87,7 @@
 				<div class="col-sm-12">
 					<div class="form-group form-float">
 						<div class="form-line">
-							<input type="text" name="RF_DAY0" id="RF_DAY0" class="form-control" placeholder="Ngày tế xuân">
+							Phả ký<input type="text" name="History" id="History" class="form-control" placeholder="Phả ký">
 							<span class="help-block"></span>
 						</div>
 					</div>
@@ -93,7 +95,16 @@
 				<div class="col-sm-12">
 					<div class="form-group form-float">
 						<div class="form-line">
-							<input type="text" name="RF_DAY1" id="RF_DAY1" class="form-control" placeholder="Ngày tế thu">
+							Tryền thống<input type="text" name="Convention" id="Convention" class="form-control" placeholder="Tộc ước">
+							<span class="help-block"></span>
+						</div>
+					</div>
+				</div>
+				
+				<div class="col-sm-12">
+					<div class="form-group form-float">
+						<div class="form-line">
+							Hương hỏa<input type="text" name="Land" id="Land" class="form-control" placeholder="Hương hỏa">
 							<span class="help-block"></span>
 						</div>
 					</div>
@@ -101,7 +112,7 @@
 				<div class="col-sm-12">
 					<div class="form-group form-float">
 						<div class="form-line">
-							<input type="text" name="RF_DAY2" id="RF_DAY2" class="form-control" placeholder="Ngày hội mả">
+							Ngày tế xuân<input type="text" name="RF_DAY0" id="RF_DAY0" class="form-control" placeholder="Ngày tế xuân">
 							<span class="help-block"></span>
 						</div>
 					</div>
@@ -109,7 +120,25 @@
 				<div class="col-sm-12">
 					<div class="form-group form-float">
 						<div class="form-line">
-							<input type="text" name="UserTel" id="UserTel" class="form-control" placeholder="Số Dt người làm">
+							Ngày tế thu<input type="text" name="RF_DAY1" id="RF_DAY1" class="form-control" placeholder="Ngày tế thu">
+							<span class="help-block"></span>
+						</div>
+					</div>
+				</div>
+				
+				<div class="col-sm-12">
+					<div class="form-group form-float">
+						<div class="form-line">
+							Trưởng họ<input type="text" name="Head" id="Head" class="form-control" placeholder="Trưởng họ">
+							<span class="help-block"></span>
+						</div>
+					</div>
+				</div>
+				
+				<div class="col-sm-12">
+					<div class="form-group form-float">
+						<div class="form-line">
+							Số Dt người làm<input type="text" name="UserTel" id="UserTel" class="form-control" placeholder="Số Dt người làm">
 							<span class="help-block"></span>
 						</div>
 					</div>
@@ -117,7 +146,7 @@
 				<div class="col-sm-12">
 					<div class="form-group form-float">
 						<div class="form-line">
-							<input type="text" name="Email" id="Email" class="form-control" placeholder="Email người làm">
+							Email người làm<input type="text" name="Email" id="Email" class="form-control" placeholder="Email người làm">
 							<span class="help-block"></span>
 						</div>
 					</div>
@@ -125,15 +154,16 @@
 				<div class="col-sm-12">
 					<div class="form-group form-float">
 						<div class="form-line">
-							<input type="text" name="UserStreet" id="UserStreet" class="form-control" placeholder="Địa chỉ người làm">
+							Địa chỉ người làm<input type="text" name="UserStreet" id="UserStreet" class="form-control" placeholder="Địa chỉ người làm">
 							<span class="help-block"></span>
 						</div>
 					</div>
 				</div>
+				
 				<div class="col-sm-12">
 					<div class="form-group form-float">
 						<div class="form-line">
-							<input type="text" name="FullName" id="FullName" class="form-control" placeholder="Tên người làm">
+							Tên người làm<input type="text" name="FullName" id="FullName" class="form-control" placeholder="Tên người làm">
 							<span class="help-block"></span>
 						</div>
 					</div>
@@ -153,7 +183,16 @@
 		</div>
 		<div class="modal-footer">
 			<div id="info_gp_msg"></div>
-			<button type="button" class="btn btn-success" onclick="saveGiaPhaInfo()" ><i class="fa fa-sign-in"></i> Lưu thông tin</button>
+			<button type="button" class="btn btn-success" onclick="saveGiaPhaInfo()" ><i class="fa fa-sign-in"></i>
+			<%
+				String act = request.getParameter("action");
+				if(act.equalsIgnoreCase("edit")){
+					out.print("Cập nhật");
+					out.print("<input type=\"hidden\" id=\"idForPost\" values=\"edit\"/>");
+				}else{
+					out.print("Lưu thông tin");
+				}
+			%></button>
 		</div>
 	</div>
 	<div class="container-fluid content-row" id="gp_data">
@@ -173,12 +212,13 @@
 	</div>
 	<div class="container-fluid content-row" style="white-space: nowrap;" id="gp_phahe">
 	</div>
-	<script src="adjs/jquery-3.2.1.slim.min.js"></script>
-    <script src="adjs/jquery-3.2.1.min.js"></script>
-    <script src="adjs/popper.min.js"></script>
-    <script src="adjs/bootstrap.min.js" ></script>
-	<link href="adcss/summernote-bs4.css" rel="stylesheet">
-    <script src="adjs/summernote-bs4.js"></script>
+	
+	<script src="<c:url value='/adjs/jquery-3.2.1.slim.min.js'/>" ></script>
+    <script src="<c:url value='/adjs/jquery-3.2.1.min.js'/>" ></script>
+    <script src="<c:url value='/adjs/popper.min.js'/>" ></script>
+    <script src="<c:url value='/adjs/bootstrap.min.js'/>" ></script>
+	<link href="<c:url value='/adcss/summernote-bs4.css'/>" rel="stylesheet"/>
+	<script src="<c:url value='/adjs/summernote-bs4.js'/>" ></script>
 	
 <script type="text/javascript">
 	function ucFirstAllWords( str )
@@ -192,6 +232,7 @@
 		return pieces.join(" ");
 	}
 	$(document).ready(function() {
+		
 		loadGpInfo();
 		$('.navbar-nav>li>a').on('click', function(){
 			$('.navbar-collapse').collapse('hide');
@@ -230,82 +271,116 @@
 	});
 	
 	function loadGpInfo(){
-		$("#gp_data").hide();
+		
+		$("#gp_data").hide("");
 		$("#gp_phahe").hide("");
 		$("#gp_phahe_search").hide();
 
-		$("#info_gp_msg").html('<img src="adimgs/loading1.gif">');
-		//
+		$("#info_gp_msg").html('<img src="/adv/adimgs/loading1.gif">');
+		var url = "http://localhost:8080/adv/parentage/ae";
 		var name = $("#name").val();
-        // ajax
-        $.ajax({
-			url : "load_data.php",
-            type : "POST",
-            dataType: "JSON",
-			data: {
-				f:"loadgpinfo",
-			},
-            success: function(data) {
-				$('[name="AREAS_ID"]').val(data.AREAS_ID);
-				$('[name="RF_NAME"]').val(data.RF_NAME);
-				$('[name="RF_OTAI"]').val(data.RF_OTAI);
-				$('[name="RF_DAY0"]').val(data.RF_DAY0);			
-				$('[name="RF_DAY1"]').val(data.RF_DAY1);
-				$('[name="RF_DAY2"]').val(data.RF_DAY2);
-				$('[name="RF_STS"]').val(data.RF_STS);
-				$('[name="UserTel"]').val(data.UserTel);
-				$('[name="UserStreet"]').val(data.UserStreet);
-				$('[name="FullName"]').val(data.FullName);
-				$('[name="Email"]').val(data.Email);
+		var request;
+		
+		if (window.XMLHttpRequest) {
+            request = new XMLHttpRequest();
+        } else if (window.ActiveXObject) {
+            request = new ActiveXObject("Microsoft.XMLHTTP");
+        }
+ 
+        try {
+            request.onreadystatechange = getInfo;
+            request.open("GET", url, true);
+            request.send();
+        } catch (e) {
+            alert("Unable to connect to server");
+        }
+    
+ 
+    	function getInfo() {
+        	if (request.readyState == 4) {
+        	    var data = JSON.parse(request.responseText);   
+        	    var eid = document.getElementById("AREAS_ID");
+        	    for (var i = 0; i < eid.options.length; ++i) {
+        	        if (eid.options[i].text === data.address)
+        	            eid.options[i].selected = true;
+        	    }
+        	    $("#RF_NAME").val(data.parentage_name),
+				$("#RF_DAY0").val(data.cultural_spring_day),
+				$("#RF_DAY1").val(data.cultural_autumn_day),			
+				$("#UserTel").val(data.head_of_parentage_number),
+				$("#UserStreet").val(data.head_of_parentage_address),
+				$("#FullName").val(data.account_name),
+				$("#Email").val(data.head_of_parentage_email),
+				$("#Land").val(data.cult_portion_land),
+				$("#Convention").val(data.convention_of_parentage),
+				$("#History").val(data.history_of_parentage),
+				$("#Ancestor").val(data.ancestor),
+				$("#Head").val(data.head_of_parentage_name)
 				$("#gp_info").show();
 				$("#info_gp_msg").html('');
-            },
-            error: function(jqXHR, textStatus, errorThrown) {
-				alert('Error '+ textStatus);
-            }
-        });
+       	 	}
+  	  	}
 	}
 	function saveGiaPhaInfo(){
+		
 		$("#gp_data").hide();
 		$("#gp_phahe").hide("");
 		$("#gp_phahe_search").hide();
 		//
-		$("#info_gp_msg").html('<img src="adimgs/loading1.gif">');
-		var name = $("#name").val();
-        // ajax
-        $.ajax({
-			url : "load_data.php",
-            type : "POST",
-            dataType: "JSON",
-			data: {
-				f:"savegpinfo",
-				AREAS_ID:$("#AREAS_ID").val(),
-				RF_NAME:$("#RF_NAME").val(),
-				RF_OTAI:$("#RF_OTAI").val(),
-				RF_DAY0:$("#RF_DAY0").val(),
-				RF_DAY1:$("#RF_DAY1").val(),
-				RF_DAY2:$("#RF_DAY2").val(),
-				RF_STS:$("#RF_STS").val(),
-				UserTel:$("#UserTel").val(),
-				UserStreet:$("#UserStreet").val(),
-				FullName:$("#FullName").val(),
-				Email:$("#Email").val(),
-			},
-            success: function(data) {
+		$("#info_gp_msg").html('<img src="/adv/adimgs/loading1.gif">');
+		var act = $("#idForPost").val();
+		//var url = "http://localhost:8080/adv/parentage/ae?action="+act;
+		
+		var request;
+		
+		if (window.XMLHttpRequest) {
+            request = new XMLHttpRequest();
+        } else if (window.ActiveXObject) {
+            request = new ActiveXObject("Microsoft.XMLHTTP");
+        }
+ 
+        try {
+        	var data = {
+        			parentage_id : "",
+        			address:$("#AREAS_ID").val(),
+     	    		parentage_name:$("#RF_NAME").val(),
+     	    		cultural_spring_day:$("#RF_DAY0").val(),
+     	    		cultural_autumn_day:$("#RF_DAY1").val(),			
+     	    		head_of_parentage_number:$("#UserTel").val(),
+     	    		head_of_parentage_address:$("#UserStreet").val(),
+     	    		account_name:$("#FullName").val(),
+     	    		head_of_parentage_email:$("#Email").val(),
+     	    		cult_portion_land:$("#Land").val(),
+     	    		convention_of_parentage:$("#Convention").val(),
+     	    		history_of_parentage:$("#History").val(),
+     	    		ancestor:$("#Ancestor").val(),
+     	    		head_of_parentage_name:$("#Head").val()			
+        	};
+        	var dt = JSON.stringify(data)
+        	var url = "http://localhost:8080/adv/parentage/ae?data="+encodeURIComponent(dt);
+            request.onreadystatechange = getInfo;
+            request.open("POST", url, true);
+            request.setRequestHeader("Content-Type", "application/json");
+            //console.log(dt);
+            request.send();
+        } catch (e) {
+            alert("Unable to connect to server");
+        }
+    
+ 
+    	function getInfo() {
+        	if (request.readyState == 4) {
 				$("#gp_info").show();
 				$("#info_gp_msg").html('');
-            },
-            error: function(jqXHR, textStatus, errorThrown) {
-				alert('Error '+ textStatus);
-            }
-        });
+       	 	}
+  	  	}
 	}
 	function loadInfo(dta){
 		$("#gp_info").hide();
 		$("#gp_data").show();
 		$("#gp_phahe").hide();
 		$("#gp_phahe_search").hide();
-		$("#info_msg").html('<img src="adimgs/loading1.gif">');
+		$("#info_msg").html('<img src="/adv/adimgs/loading1.gif">');
 		//
 		$("#dta").val(dta);
 		
@@ -335,7 +410,7 @@
 		$("#gp_phahe").hide();
 		$("#gp_phahe_search").hide();
 
-		$("#info_msg").html('<img src="adimgsloading1.gif">');
+		$("#info_msg").html('<img src="/adv/adimgs/loading1.gif">');
 		//
 		var dta = $("#dta").val();
 		var sendInfo = {
@@ -370,7 +445,7 @@
 		$("#gp_data").hide();
 		$("#gp_phahe_search").show();
 		$("#gp_phahe").show();
-		$("#gp_phahe").html('<img src="adimgs/loading1.gif">');
+		$("#gp_phahe").html('<img src="/adv/adimgs/loading1.gif">');
 		//
 		var name = $("#name").val();
         // ajax
@@ -548,8 +623,8 @@
 		
 		$('#MANS_NAME_HUY').val( ucFirstAllWords($('#MANS_NAME_HUY').val()) );
 		//
-		$("#family_msg").html('<img src="adimgs/loading1.gif">');
-		$("#edit_family_msg").html('<img src="adimgs/loading1.gif">');
+		$("#family_msg").html('<img src="/adv/adimgs/loading1.gif">');
+		$("#edit_family_msg").html('<img src="loading0.gif">');
         // ajax
         $.ajax({
 			url : "load_family.php",
@@ -619,7 +694,7 @@
 			}
 			else{
 				// Remove and delete from DB
-				$("#edit_family_msg").html('<img src="adimgs/loading1.gif">');
+				$("#edit_family_msg").html('<img src="/adv/adimgs/loading1.gif">');
 				// ajax
 				$.ajax({
 					url : "delete_man.php",
@@ -650,7 +725,7 @@
 		}
 		else{
 			// DELETE FROM DB - and remove ---
-			$("#edit_family_msg").html('<img src="adimgs/loading1.gif">');
+			$("#edit_family_msg").html('<img src="/adv/adimgs/loading1.gif">');
 			// ajax
 			$.ajax({
 				url : "delete_man.php",
@@ -685,7 +760,7 @@
 		if( $("#SEARCH_NAME").val().length==0 ){
 			return;
 		}
-		$("#gp_phahe_search_result").html('<img src="adimgs/loading1.gif">');
+		$("#gp_phahe_search_result").html('<img src="/adv/adimgs/loading1.gif">');
 		// ajax
 		$.ajax({
 			url : "search_family.php",
@@ -753,7 +828,7 @@
 			//
 		}
 		else{
-			$("#edit_family_msg").html('<img src="adimgs/loading1.gif">');
+			$("#edit_family_msg").html('<img src="loading0.gif">');
 			
 			// Load data
 			var family = {
@@ -961,5 +1036,5 @@
             </div><!-- /.modal-content -->
         </div><!-- /.modal-dialog -->
     </div><!-- /.modal -->
-</body>
+  </body>
 </html>

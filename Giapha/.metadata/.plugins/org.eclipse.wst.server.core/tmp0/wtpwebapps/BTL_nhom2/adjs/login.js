@@ -25,7 +25,7 @@ function checkvalid()
 
 function login(){
 	if(checkvalid()){
-		$('#form')[0].action = "/adv/home";
+		$('#form')[0].action = "/adv/view";
 		$('#form')[0].method = "POST";
 		$('#form')[0].submit();
 	}
