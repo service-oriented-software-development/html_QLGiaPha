@@ -1,0 +1,8 @@
+﻿/*Các xử lý định dạng cho user.html*/
+
+@import url('basic.css');
+@import url('responsived.css');
+
+.main1200{
+	background: #efefef;
+}

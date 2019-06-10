@@ -1,0 +1,93 @@
+package jsoft.ads.account;
+
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
+
+import Common.ConnectionPool;
+import jsoft.ads.object.AccountObject;
+
+public class AccountControl {
+	AccountImpl us;
+
+	public AccountControl(ConnectionPool cp) {
+		super();
+		this.us = new AccountImpl(cp);
+	}
+	public boolean addUser(AccountObject item) {
+		return this.us.addUser(item);
+	}
+
+	public boolean editUser(AccountObject item) {
+		
+		return this.us.editUser(item);
+	}
+
+	public boolean delUser(AccountObject item) {
+		return this.us.delUser(item);
+	}
+
+	public AccountObject getUser(int id) {
+		ResultSet rs = this.us.getUser(id);
+		AccountObject item = new AccountObject();
+		if(rs!=null) {
+			try {
+				if(rs.next()) {
+					item.setUsername(rs.getString("username"));
+					item.setUserpass(rs.getString("userpass"));
+				}
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+		return item;
+	}
+
+	public AccountObject getUser(String username, String userpass) {
+		
+		ResultSet rs = this.us.getUser(username, userpass);
+		AccountObject item = new AccountObject();
+		if(rs!=null) {
+			try {
+				if(rs.next()) {
+					item.setUsername(rs.getString("username"));
+					item.setUserpass(rs.getString("userpass"));
+				}
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+		return item;
+	}
+
+	public ArrayList<AccountObject> getUsers(AccountObject similar, int page, byte total) {
+		int at = (page-1)*total;
+		ResultSet rs = this.us.getUsers(similar, at, total);
+		ArrayList<AccountObject> items = new ArrayList<AccountObject>();
+		if(rs!=null) {
+			try {
+				while(rs.next()) {
+					AccountObject item = new AccountObject();
+					item.setUsername(rs.getString("username"));
+					item.setUserpass(rs.getString("userpass"));
+					items.add(item);
+				}
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+		return items;
+		
+	}
+	public ConnectionPool getCP() {	
+		return this.us.getCP();
+	}
+
+	public void releaseConnection() {
+		this.us.releaseConnection();
+	}
+}

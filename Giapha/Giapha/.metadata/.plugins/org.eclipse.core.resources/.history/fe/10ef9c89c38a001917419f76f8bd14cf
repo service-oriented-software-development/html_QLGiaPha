@@ -1,0 +1,1012 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<!doctype html>
+<html >
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    <link rel="stylesheet" href="<c:url value='/adcss/bootstrap.min.css'/>"/>
+    <link href="<c:url value='/adcss/bootstrap.icon-large.min.css'/>" rel="stylesheet"/>
+	<link rel='stylesheet' href="<c:url value='adcss/all.css'/>"/>
+	
+	<meta content="giapha, giatoc, tocpha, giaphả, giatộc, gia pha, gia toc, toc pha, gia phả, gia tộc, tộc phả,caygiapha, cay gia pha, cay gia dinh" name=keywords>
+	<title>Editor</title>
+  </head>
+  <body >
+	<!-- HEADER NAV - BEGIN -->
+	<nav class="navbar navbar-dark bg-dark navbar-expand-sm">
+	  <div class="container">
+		<a class="navbar-brand" href="#">
+			<img src="<c:url value='/adimgs/exit.png'/>" alt="vietnamgiapha"/>Editor
+		</a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-list-11" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+		  <span class="navbar-toggler-icon"></span>
+		</button>
+		<div class="collapse navbar-collapse" id="navbar-list-11">
+		  <ul class="navbar-nav ml-auto">
+			<li class="nav-item active">
+			  <a class="nav-link" href="Editor.html" onclick="loadGpInfo();"><span class="glyphicon glyphicon-envelope"></span> Thông tin gia phả</a>
+			</li>
+			<li class="nav-item">
+			  <a class="nav-link" href="#" onclick="loadInfo(1);"><span class="glyphicon glyphicon-envelope"></span> Thủy tổ</a>
+			</li>
+			<li class="nav-item">
+			  <a class="nav-link" href="#" onclick="loadInfo(2);"><span class="glyphicon glyphicon-envelope"></span> Phả ký</a>
+			</li>
+			<li class="nav-item">
+			  <a class="nav-link" href="#" onclick="loadPhaHe0();"><span class="glyphicon glyphicon-envelope"></span> Phả đồ</a>
+			</li>
+			<li class="nav-item">
+			  <a class="nav-link" href="#" onclick="loadInfo(3);"><span class="glyphicon glyphicon-envelope"></span> Tộc ước</a>
+			</li>
+			<li class="nav-item">
+			  <a class="nav-link" href="#" onclick="loadInfo(4);"><span class="glyphicon glyphicon-envelope"></span> Hương hỏa</a>
+			</li>
+			<li class="nav-item">
+			  <a class="nav-link" href="main.html" ><span class="glyphicon glyphicon-envelope"></span> Trở về Home</a>
+			</li>
+		  </ul>
+		</div>
+	  </div>
+	</nav>
+	<div class="container-fluid content-row" id="gp_info">
+		<div class="modal-header">
+			<h4 class="modal-title" id="largeModalLabel">THÔNG TIN GIA PHẢ</h4>
+		</div>
+		<div class="modal-body form">
+			<div id="login_msg"></div>
+			<form id="form_gpinfo" data-parsley-validate="" class="form-horizontal form-label-left" novalidate="">
+				<div class="col-sm-12">
+					<div class="form-group form-float">
+						<div class="form-line">
+							<select name="AREAS_ID" id="AREAS_ID" >
+<option value='1'>Quảng Nam</option><option value='2'>Đà Nẵng</option><option value='3'>Sài Gòn</option><option value='4'>Hà Nội</option><option value='5'>An Giang</option><option value='6'>Bà Rịa Vũng Tàu</option><option value='7'>Bạc Liêu </option><option value='8'>Bắc Cạn </option><option value='9'>Bắc Giang </option><option value='10'>Bắc Ninh </option><option value='11'>Bến Tre </option><option value='12'>Bình Dương </option><option value='13'>Bình Định </option><option value='14'>Bình Dương </option><option value='15'>Bình Định </option><option value='16'>Bình Phước </option><option value='17'>Bình Thuận </option><option value='18'>Cà Mau </option><option value='19'>Cao Bằng </option><option value='20'>Cần Thơ </option><option value='21'>Đắc Lắc </option><option value='22'>Đồng Nai </option><option value='23'>Đồng Tháp </option><option value='24'>Gia Lai </option><option value='25'>Hà Giang </option><option value='26'>Hà Nam </option><option value='27'>Hà Tây </option><option value='28'>Hà Tĩnh </option><option value='29'>Hải Dương </option><option value='30'>Hải Phòng </option><option value='31'>Hòa Bình </option><option value='32'>Hưng Yên </option><option value='33'>Khánh Hòa </option><option value='34'>Kiên Giang </option><option value='35'>Kon Tum </option><option value='36'>Lai Châu </option><option value='37'>Lâm Đồng </option><option value='38'>Lạng Sơn </option><option value='39'>Lào Cai </option><option value='40'>Long An </option><option value='41'>Nam Định </option><option value='42'>Nghệ An </option><option value='43'>Ninh Bình </option><option value='44'>Ninh Thuận </option><option value='45'>Phú Yên </option><option value='46'>Phú Thọ </option><option value='47'>Quảng Bình </option><option value='48'>Quảng Ngãi </option><option value='49'>Quảng Ninh </option><option value='50'>Quảng Trị </option><option value='51'>Sóc Trăng </option><option value='52'>Sơn La </option><option value='53'>Tây Ninh </option><option value='54'>Thái Bình </option><option value='55'>Thái Nguyên </option><option value='56'>Thanh Hóa </option><option value='57'>Thừa Thiên Huế </option><option value='58'>Tiền Giang </option><option value='59'>Trà Vinh </option><option value='60'>Tuyên Quang </option><option value='61'>Vĩnh Long </option><option value='62'>Vĩnh Phúc </option><option value='63'>Yên Bái </option></select>
+							<span class="help-block"></span>
+						</div>
+					</div>
+				</div>
+				<div class="col-sm-12">
+					<div class="form-group form-float">
+						<div class="form-line">
+							<input type="text" name="RF_NAME" id="RF_NAME" class="form-control" placeholder="Tên gia phả">
+							<span class="help-block"></span>
+						</div>
+					</div>
+				</div>
+				<div class="col-sm-12">
+					<div class="form-group form-float">
+						<div class="form-line">
+							<input type="text" name="Ancestor" id="Ancestor" class="form-control" placeholder="Gia tiên">
+							<span class="help-block"></span>
+						</div>
+					</div>
+				</div>
+				<div class="col-sm-12">
+					<div class="form-group form-float">
+						<div class="form-line">
+							<input type="text" name="History" id="History" class="form-control" placeholder="Tiểu sử">
+							<span class="help-block"></span>
+						</div>
+					</div>
+				</div>
+				<div class="col-sm-12">
+					<div class="form-group form-float">
+						<div class="form-line">
+							<input type="text" name="Convention" id="Convention" class="form-control" placeholder="Tryền thống">
+							<span class="help-block"></span>
+						</div>
+					</div>
+				</div>
+				
+				<div class="col-sm-12">
+					<div class="form-group form-float">
+						<div class="form-line">
+							<input type="text" name="Land" id="Land" class="form-control" placeholder="Nơi thờ cúng">
+							<span class="help-block"></span>
+						</div>
+					</div>
+				</div>
+				<div class="col-sm-12">
+					<div class="form-group form-float">
+						<div class="form-line">
+							<input type="text" name="RF_DAY0" id="RF_DAY0" class="form-control" placeholder="Ngày tế xuân">
+							<span class="help-block"></span>
+						</div>
+					</div>
+				</div>
+				<div class="col-sm-12">
+					<div class="form-group form-float">
+						<div class="form-line">
+							<input type="text" name="RF_DAY1" id="RF_DAY1" class="form-control" placeholder="Ngày tế thu">
+							<span class="help-block"></span>
+						</div>
+					</div>
+				</div>
+				
+				<div class="col-sm-12">
+					<div class="form-group form-float">
+						<div class="form-line">
+							<input type="text" name="Head" id="Head" class="form-control" placeholder="Trưởng họ">
+							<span class="help-block"></span>
+						</div>
+					</div>
+				</div>
+				
+				<div class="col-sm-12">
+					<div class="form-group form-float">
+						<div class="form-line">
+							<input type="text" name="UserTel" id="UserTel" class="form-control" placeholder="Số Dt người làm">
+							<span class="help-block"></span>
+						</div>
+					</div>
+				</div>
+				<div class="col-sm-12">
+					<div class="form-group form-float">
+						<div class="form-line">
+							<input type="text" name="Email" id="Email" class="form-control" placeholder="Email người làm">
+							<span class="help-block"></span>
+						</div>
+					</div>
+				</div>
+				<div class="col-sm-12">
+					<div class="form-group form-float">
+						<div class="form-line">
+							<input type="text" name="UserStreet" id="UserStreet" class="form-control" placeholder="Địa chỉ người làm">
+							<span class="help-block"></span>
+						</div>
+					</div>
+				</div>
+				
+				<div class="col-sm-12">
+					<div class="form-group form-float">
+						<div class="form-line">
+							<input type="text" name="FullName" id="FullName" class="form-control" placeholder="Tên người làm">
+							<span class="help-block"></span>
+						</div>
+					</div>
+				</div>
+				<div class="col-sm-12">
+					<div class="form-group form-float">
+						<div class="form-line">
+							<select name="RF_STS" id="RF_STS" >
+								<option value=0>Đang làm</option>";
+								<option value=1>Xong</option>";
+							<select>
+							<span class="help-block"></span>
+						</div>
+					</div>
+				</div>
+			</form>
+		</div>
+		<div class="modal-footer">
+			<div id="info_gp_msg"></div>
+			<button type="button" class="btn btn-success" onclick="saveGiaPhaInfo()" ><i class="fa fa-sign-in"></i> Lưu thông tin</button>
+		</div>
+	</div>
+	<div class="container-fluid content-row" id="gp_data">
+		<div id="summernote"></div>
+		<div class="modal-footer">
+			<div id="info_msg"></div>
+			<input type="hidden" id="dta" value="1">
+			<input type="hidden" id="isnew" value="0">
+			<button type="button" class="btn btn-success" onclick="saveInfo()" ><i class="fa fa-sign-in"></i> Lưu thông tin</button>
+		</div>
+	</div>
+	<div class="container-fluid content-row" style="white-space: nowrap;" id="gp_phahe_search">
+		<input type="text" id="SEARCH_NAME" name="SEARCH_NAME" value="" class="form-control">
+		<button type="button" class="btn btn-success" onclick="search()" ><i class="fa fa-sign-in"></i> Tìm tên người</button>
+		<div id="gp_phahe_search_result"></div>
+		<button class='btn btn-primary' onclick='loadPhaHe()'>XEM PHẢ HỆ - PHẢ ĐỒ</button>
+	</div>
+	<div class="container-fluid content-row" style="white-space: nowrap;" id="gp_phahe">
+	</div>
+	
+	<script src="<c:url value='/adjs/jquery-3.2.1.slim.min.js'/>" ></script>
+    <script src="<c:url value='/adjs/jquery-3.2.1.min.js'/>" ></script>
+    <script src="<c:url value='/adjs/popper.min.js'/>" ></script>
+    <script src="<c:url value='/adjs/bootstrap.min.js'/>" ></script>
+	<link href="<c:url value='/adcss/summernote-bs4.css'/>" rel="stylesheet"/>
+	<script src="<c:url value='/adjs/summernote-bs4.js'/>" ></script>
+	
+<script type="text/javascript">
+	function ucFirstAllWords( str )
+	{
+		var pieces = str.split(" ");
+		for ( var i = 0; i < pieces.length; i++ )
+		{
+			var j = pieces[i].charAt(0).toUpperCase();
+			pieces[i] = j + pieces[i].substr(1);
+		}
+		return pieces.join(" ");
+	}
+	$(document).ready(function() {
+		
+		loadGpInfo();
+		$('.navbar-nav>li>a').on('click', function(){
+			$('.navbar-collapse').collapse('hide');
+		});
+		
+		$("#NAME_HUY").change(function () {
+			var i = $(this).children('option:selected').index();
+			$('#RF_ID').val(list_mans[i].RF_ID);				
+			$('#FAMILY_ID').val(list_mans[i].FAMILY_ID);				
+			$('#PATHER_UP').val(list_mans[i].PATHER_UP);				
+			$('#FAMILY_LEVEL').val(list_mans[i].FAMILY_LEVEL);				
+			$('#FAMILY_THUTU').val(list_mans[i].FAMILY_THUTU);				
+			$('#MANS_NAME_HUY').val(list_mans[i].MANS_NAME_HUY);	
+			$('#MANS_ID').val(list_mans[i].MANS_ID);	
+			$('#MANS_GENDER').val(list_mans[i].MANS_GENDER);	
+			$('#MANS_CONTHUMAY').val(list_mans[i].MANS_CONTHUMAY);	
+			$('#MANS_DOB').val(list_mans[i].MANS_DOB);	
+			$('#MANS_DOD').val(list_mans[i].MANS_DOD);	
+			$('#MANS_WOD').val(list_mans[i].MANS_WOD);	
+			$('#MANS_HUONGTHO').val(list_mans[i].MANS_HUONGTHO);	
+			$('#MANS_DETAIL').val(list_mans[i].MANS_DETAIL);
+		});
+		
+		$('#summernote').summernote({
+			toolbar: [
+				// [groupName, [list of button]]
+				['style', ['bold', 'italic', 'underline', 'clear']],
+				['font', ['strikethrough', 'superscript', 'subscript']],
+				['fontsize', ['fontsize']],
+				['color', ['color']],
+				['para', ['ul', 'ol', 'paragraph']],
+				['insert', ['link', 'video']],
+				['height', ['height']]
+			]
+		});
+	});
+	
+	function loadGpInfo(){
+		
+		$("#gp_data").hide("");
+		$("#gp_phahe").hide("");
+		$("#gp_phahe_search").hide();
+
+		$("#info_gp_msg").html('<img src="/adv/adimgs/loading1.gif">');
+		var url = "http://localhost:8080/adv/parentage/ae";
+		var name = $("#name").val();
+		var request;
+		
+		if (window.XMLHttpRequest) {
+            request = new XMLHttpRequest();
+        } else if (window.ActiveXObject) {
+            request = new ActiveXObject("Microsoft.XMLHTTP");
+        }
+ 
+        try {
+            request.onreadystatechange = getInfo;
+            request.open("GET", url, true);
+            request.send();
+        } catch (e) {
+            alert("Unable to connect to server");
+        }
+    
+ 
+    	function getInfo() {
+        	if (request.readyState == 4) {
+        	    var data = JSON.parse(request.responseText);   
+        	    var eid = document.getElementById("AREAS_ID");
+        	    for (var i = 0; i < eid.options.length; ++i) {
+        	        if (eid.options[i].text === data.address)
+        	            eid.options[i].selected = true;
+        	    }
+        	    $("#RF_NAME").val(data.parentage_name),
+				$("#RF_DAY0").val(data.cultural_spring_day),
+				$("#RF_DAY1").val(data.cultural_autumn_day),			
+				$("#UserTel").val(data.head_of_parentage_number),
+				$("#UserStreet").val(data.head_of_parentage_address),
+				$("#FullName").val(data.account_name),
+				$("#Email").val(data.head_of_parentage_email),
+				$("#Land").val(data.cult_portion_land),
+				$("#Convention").val(data.convention_of_parentage),
+				
+				$("#History").val(data.history_of_parentage),
+				$("#Ancestor").val(data.ancestor),
+				$("#Head").val(data.head_of_parentage_name)
+				
+       	 	}
+  	  	}
+	}
+	function saveGiaPhaInfo(){
+		$("#gp_data").hide();
+		$("#gp_phahe").hide("");
+		$("#gp_phahe_search").hide();
+		//
+		$("#info_gp_msg").html('<img src="/adv/adimgs/loading1.gif">');
+		var name = $("#name").val();
+        // ajax
+        $.ajax({
+			url : "load_data.php",
+            type : "POST",
+            dataType: "JSON",
+			data: {
+				f:"savegpinfo",
+				AREAS_ID:$("#AREAS_ID").val(),
+				RF_NAME:$("#RF_NAME").val(),
+				RF_OTAI:$("#RF_OTAI").val(),
+				RF_DAY0:$("#RF_DAY0").val(),
+				RF_DAY1:$("#RF_DAY1").val(),
+				RF_DAY2:$("#RF_DAY2").val(),
+				RF_STS:$("#RF_STS").val(),
+				UserTel:$("#UserTel").val(),
+				UserStreet:$("#UserStreet").val(),
+				FullName:$("#FullName").val(),
+				Email:$("#Email").val(),
+			},
+            success: function(data) {
+				$("#gp_info").show();
+				$("#info_gp_msg").html('');
+            },
+            error: function(jqXHR, textStatus, errorThrown) {
+				alert('Error '+ textStatus);
+            }
+        });
+	}
+	function loadInfo(dta){
+		$("#gp_info").hide();
+		$("#gp_data").show();
+		$("#gp_phahe").hide();
+		$("#gp_phahe_search").hide();
+		$("#info_msg").html('<img src="/adv/adimgs/loading1.gif">');
+		//
+		$("#dta").val(dta);
+		
+		var sendInfo = {
+			f: "info",
+			dta:dta,
+		};
+        // ajax
+        $.ajax({
+			url : "load_data.php",
+            dataType: "JSON",
+            type : "POST",
+			data: sendInfo,
+            success: function(jsonData) {
+				document.getElementById("isnew").value = ""+jsonData.isnew;
+				$("#summernote").summernote("code", jsonData.data);
+				$("#info_msg").html('');
+            },
+            error: function(jqXHR, textStatus, errorThrown) {
+				alert('Error '+ textStatus);
+            }
+        });
+	}
+	function saveInfo(dta){
+		$("#gp_info").hide();
+		$("#gp_data").show();
+		$("#gp_phahe").hide();
+		$("#gp_phahe_search").hide();
+
+		$("#info_msg").html('<img src="/adv/adimgs/loading1.gif">');
+		//
+		var dta = $("#dta").val();
+		var sendInfo = {
+			isnew: $("#isnew").val(),
+			f: "saveinfo",
+			dta:dta,
+			info:$("#summernote").summernote('code')
+		};
+        // ajax
+        $.ajax({
+			url : "load_data.php",
+            type : "POST",
+            dataType: "JSON",
+			data: sendInfo,
+            success: function(data) {
+				$("#info_msg").html('');
+            },
+            error: function(jqXHR, textStatus, errorThrown) {
+				alert('Error '+ textStatus);
+            }
+        });
+	}
+	function loadPhaHe0(){
+		$("#gp_info").hide();
+		$("#gp_data").hide();
+		$("#gp_phahe_search").show();
+		$("#gp_phahe").show();
+		$("#gp_phahe").html('Bấm vào PHẢ HỆ-PHẢ ĐỔ để xem. <br/>Lưu ý nếu điện thoại cấu hình yếu, <br/>có thể chạy không nổi với 1 gia phả <br/>có nhiều gia đình(>10000 gia đình).');
+	}
+	function loadPhaHe(){
+		$("#gp_info").hide();
+		$("#gp_data").hide();
+		$("#gp_phahe_search").show();
+		$("#gp_phahe").show();
+		$("#gp_phahe").html('<img src="/adv/adimgs/loading1.gif">');
+		//
+		var name = $("#name").val();
+        // ajax
+        $.ajax({
+			url : "load_phahe.php",
+            type : "POST",
+            dataType: "JSON",
+			data: {},
+            success: function(data) {
+				if(data.rf_id==-1){
+					alert("Có lỗi: " + data.text);
+					location.reload();
+				}
+				else{
+					$("#gp_phahe").html(data.text);
+				}
+            },
+            error: function(jqXHR, textStatus, errorThrown) {
+				alert('Error '+ textStatus);
+				location.reload();
+            }
+        });
+	}
+	var list_mans = {};
+	var list_mans_0 = {};	// cha me
+	var list_mans_1  = {};	// anh em
+	var list_mans_2  = {};	// con cai
+	var list_mans_search = {};
+	var save_MANS_NAME_HUY = "";
+	//
+	function reloadFormMan(){
+		$('#NAME_HUY')
+			.find('option')
+			.remove()
+		;
+		var curent_MANS_ID = parseInt( $('#MANS_ID').val() );
+		for( i=0; i< list_mans.length; i++ ){
+			$('#NAME_HUY').append($('<option/>', {
+				value: ''+list_mans[i].MANS_ID,
+				text : ""+list_mans[i].FAMILY_LEVEL+"/"+(list_mans[i].MANS_GENDER=="m"?"Ông":"Bà")+'-'+list_mans[i].MANS_NAME_HUY
+			}));
+			if( curent_MANS_ID==list_mans[i].MANS_ID || i==0){
+				$('#RF_ID').val(list_mans[i].RF_ID);
+				$('#FAMILY_ID').val(list_mans[i].FAMILY_ID);				
+				$('#PATHER_UP').val(list_mans[i].PATHER_UP);				
+				$('#FAMILY_LEVEL').val(list_mans[i].FAMILY_LEVEL);				
+				$('#FAMILY_THUTU').val(list_mans[i].FAMILY_THUTU);				
+				$('#MANS_NAME_HUY').val(list_mans[i].MANS_NAME_HUY);	
+				$('#MANS_ID').val(list_mans[i].MANS_ID);	
+				$('#MANS_GENDER').val(list_mans[i].MANS_GENDER);	
+				$('#MANS_CONTHUMAY').val(list_mans[i].MANS_CONTHUMAY);	
+				$('#MANS_DOB').val(list_mans[i].MANS_DOB);	
+				$('#MANS_DOD').val(list_mans[i].MANS_DOD);	
+				$('#MANS_WOD').val(list_mans[i].MANS_WOD);	
+				$('#MANS_HUONGTHO').val(list_mans[i].MANS_HUONGTHO);	
+				$('#MANS_DETAIL').val(list_mans[i].MANS_DETAIL);
+				curent_MANS_ID = parseInt( list_mans[i].MANS_ID );
+			}
+		}
+		//console.log( "curent_MANS_ID="+curent_MANS_ID );
+		$('#NAME_HUY').val(curent_MANS_ID);
+	}
+	
+	function n(rf_id, fid){
+		if( rf_id<=0 ){
+			return;
+		}
+		if( fid==0 ){
+			//
+		}
+		else{
+			// Load data
+			var family = {
+				RF_ID: rf_id,
+				FAMILY_ID: fid
+			};
+			// ajax
+			$.ajax({
+				url : "load_family.php",
+				type : "POST",
+				dataType: "JSON",
+				data: family,
+				success: function(data) {
+					$("#modal_form_newmember_title").html("TẠO MỚI NGƯỜI");
+				},
+				error: function(jqXHR, textStatus, errorThrown) {
+					alert('Error '+ textStatus);
+					location.reload();
+				}
+			});
+		}
+		$('.form-group').removeClass('has-error'); // clear error class
+		$('#modal_form_newmember').modal('show'); // show bootstrap modal
+	}
+	//
+	function newgd1(){
+		//console.log( $("#form_family").serialize() );
+		var MANS_ID = parseInt( $('#MANS_ID').val() );
+		if(MANS_ID==0){
+			return false;
+			//
+		}
+		//console.log( "MANS_ID ="+MANS_ID );
+		// THEM GIA DINH ANH EM
+		alert("Chức năng thêm gia đình anh em\n\nĐiền thông tin vào bên dưới và bấm [Lưu lại]");
+		$('#NAME_HUY')
+			.find('option')
+			.remove()
+		;
+		//
+		$('#NAME_HUY').append($('<option/>', {
+				value: '0',
+				text : "-- Tên anh em --"
+			}));
+		$('#NAME_HUY').val(0);
+		var MANS_NAME_HUY = $('#MANS_NAME_HUY').val();
+		var PATHER_UP = parseInt( $('#FAMILY_ID').val() );
+		var FAMILY_THUTU = parseInt( $('#FAMILY_THUTU').val() )+1;
+		//
+		$('#FAMILY_THUTU').val( "" +FAMILY_THUTU);
+		$('#FAMILY_ID').val( "0" );
+		$('#MANS_NAME_HUY').val("Con của "+save_MANS_NAME_HUY);	
+		$('#MANS_ID').val("0");
+		$('#MANS_GENDER').val("m");
+		$('#MANS_CONTHUMAY').val(1);
+		$('#MANS_DOB').val("");
+		$('#MANS_DOD').val("");
+		$('#MANS_WOD').val("");
+		$('#MANS_HUONGTHO').val(0);
+		$('#MANS_DETAIL').val("Là con của ông/bà "+save_MANS_NAME_HUY);
+		return false;
+	}
+	
+	function newgd2(){
+		//console.log( $("#form_family").serialize() );
+		var MANS_ID = parseInt( $('#MANS_ID').val() );
+		if(MANS_ID==0){
+			return false;
+			//
+		}
+		//console.log( "MANS_ID ="+MANS_ID );
+		// THEM GIA DINH CON
+		alert("Chức năng thêm gia đình con\n\nĐiền thông tin vào bên dưới và bấm [Lưu lại]");
+		$('#NAME_HUY')
+			.find('option')
+			.remove()
+		;
+		$('#NAME_HUY').append($('<option/>', {
+				value: '0',
+				text : "-- Tên con --"
+			}));
+		$('#NAME_HUY').val(0);
+		var MANS_NAME_HUY = $('#MANS_NAME_HUY').val();
+		var PATHER_UP = parseInt( $('#FAMILY_ID').val() );
+		var FAMILY_LEVEL = parseInt( $('#FAMILY_LEVEL').val() ) +1;
+		$('#PATHER_UP').val( "" +PATHER_UP);
+		$('#FAMILY_LEVEL').val( "" +FAMILY_LEVEL);
+		$('#FAMILY_ID').val( "0" );
+		$('#MANS_NAME_HUY').val("Con của "+save_MANS_NAME_HUY);	
+		$('#MANS_ID').val("0");	
+		$('#MANS_GENDER').val("m");	
+		$('#MANS_CONTHUMAY').val(1);	
+		$('#MANS_DOB').val("");	
+		$('#MANS_DOD').val("");	
+		$('#MANS_WOD').val("");	
+		$('#MANS_HUONGTHO').val(0);	
+		$('#MANS_DETAIL').val("Là con của ông/bà "+save_MANS_NAME_HUY);
+		return false;
+	}
+	function save_family(){
+		if($('#MANS_NAME_HUY').val().length<5){
+			alert("Tên không hợp lệ. >= 5 ký tự");
+			return;
+		}
+		
+		$('#MANS_NAME_HUY').val( ucFirstAllWords($('#MANS_NAME_HUY').val()) );
+		//
+		$("#family_msg").html('<img src="/adv/adimgs/loading1.gif">');
+		$("#edit_family_msg").html('<img src="loading0.gif">');
+        // ajax
+        $.ajax({
+			url : "load_family.php",
+            type : "POST",
+            dataType: "JSON",
+			data: $("#form_family").serialize(),
+            success: function(jsonData) {
+				$("#family_msg").html('');
+				$("#edit_family_msg").html('');
+				list_mans = jsonData.data;
+				reloadFormMan();
+            },
+            error: function(jqXHR, textStatus, errorThrown) {
+				alert('Error '+ textStatus);
+            }
+        });
+	}
+	function addNewMans(){
+		alert("Chức năng thêm người mới (vợ hoặc chồng) vào gia đình hiện tại.\n\nĐiền thông tin vào bên dưới và bấm [Lưu lại]");
+		$('#NAME_HUY')
+			.find('option')
+			.remove()
+		;
+		//
+		for( i=0; i< list_mans.length; i++ ){
+			$('#NAME_HUY').append($('<option/>', {
+				value: ''+list_mans[i].MANS_ID,
+				text : (list_mans[i].MANS_GENDER=="m"?"Ông":"Bà")+'-'+list_mans[i].MANS_NAME_HUY
+			}));
+		}
+		$('#NAME_HUY').append($('<option/>', {
+				value: '0',
+				text : "-- Người mới --"
+			}));
+		$('#NAME_HUY').val(0);
+		//
+		$('#MANS_NAME_HUY').val("");	
+		$('#MANS_ID').val("0");	
+		$('#MANS_GENDER').val("f");	
+		$('#MANS_CONTHUMAY').val(0);	
+		$('#MANS_DOB').val("");	
+		$('#MANS_DOD').val("");	
+		$('#MANS_WOD').val("");	
+		$('#MANS_HUONGTHO').val(0);	
+		$('#MANS_DETAIL').val("");
+		return false;
+	}
+	function removeMans(){
+		var MANS_ID = parseInt( $('#MANS_ID').val() );
+		var length = $('#NAME_HUY').children('option').length;
+		if( MANS_ID == 1){
+			alert("Không thể xóa người này");
+			return false;
+		}
+		if( list_mans.length==1 ){
+			//
+			if( list_mans_2!=null && list_mans_2.length>0 ){
+				alert("Không thể xóa người này, do còn những gia đình con liên kết với gia đình này.");
+				return false;
+			}
+		}
+		//console.log("lengthNAME_HUY="+length+" list_mans.length="+list_mans.length);
+		if( length== list_mans.length+1 ){
+			if( MANS_ID==0 ){
+				// Just remove...no need delete from DB
+				reloadFormMan();
+			}
+			else{
+				// Remove and delete from DB
+				$("#edit_family_msg").html('<img src="/adv/adimgs/loading1.gif">');
+				// ajax
+				$.ajax({
+					url : "delete_man.php",
+					type : "POST",
+					dataType: "JSON",
+					data: $("#form_family").serialize(),
+					success: function(jsonData) {
+						if( jsonData.status==1 ){
+							$("#edit_family_msg").html('');
+							list_mans = jsonData.data;
+							if( list_mans==null ){
+								alert("GĐ hiện tại hiện đã xóa, tự động quay về gia đình cha");
+								goto0();
+							}
+							else{
+								reloadFormMan();
+							}
+						}
+						else{
+							$("#edit_family_msg").html(jsonData.text_result);
+						}
+					},
+					error: function(jqXHR, textStatus, errorThrown) {
+						alert('Error '+ textStatus);
+					}
+				});
+			}
+		}
+		else{
+			// DELETE FROM DB - and remove ---
+			$("#edit_family_msg").html('<img src="/adv/adimgs/loading1.gif">');
+			// ajax
+			$.ajax({
+				url : "delete_man.php",
+				type : "POST",
+				dataType: "JSON",
+				data: $("#form_family").serialize(),
+				success: function(jsonData) {
+					if( jsonData.status==1 ){
+						$("#edit_family_msg").html('');
+						list_mans = jsonData.data;
+						if( list_mans==null ){
+							alert("GĐ hiện tại hiện đã xóa, tự động quay về gia đình cha");
+							goto0();
+						}
+						else{
+							reloadFormMan();
+						}
+					}
+					else{
+						$("#edit_family_msg").html(jsonData.text_result);
+					}
+				},
+				error: function(jqXHR, textStatus, errorThrown) {
+					alert('Error '+ textStatus);
+				}
+			});
+			// ---------------
+		}
+		return false;
+	}
+	function search(){
+		if( $("#SEARCH_NAME").val().length==0 ){
+			return;
+		}
+		$("#gp_phahe_search_result").html('<img src="/adv/adimgs/loading1.gif">');
+		// ajax
+		$.ajax({
+			url : "search_family.php",
+			type : "POST",
+			dataType: "JSON",
+			data: {name: $("#SEARCH_NAME").val() 
+			},
+			success: function(jsonData) {
+				//
+				//console.log( jsonData );
+				list_mans_search = jsonData.data;
+				$("#gp_phahe_search_result").html('');
+				var RF_ID = jsonData.RF_ID;
+				for( i=0; i< list_mans_search.length; i++ ){
+					strHtml = "<a href='javascript:e("+RF_ID+","+list_mans_search[i].FAMILY_ID+")'>"+"Đời thứ: "+list_mans_search[i].FAMILY_LEVEL+"-"+list_mans_search[i].MANS_NAME_HUY+"</a>";
+					strHtml += "<button class='btn btn-outline-primary btn-sm' onclick='e("+RF_ID+","+list_mans_search[i].FAMILY_ID+")'>SỬA</button>";
+					$("#gp_phahe_search_result").append(strHtml+"<br />");
+				}
+				$("#gp_phahe_search_result").append("Tìm thấy "+list_mans_search.length+" người.<br />");
+				//
+			},
+			error: function(jqXHR, textStatus, errorThrown) {
+				alert('Error '+ textStatus);
+			}
+		});
+	}
+	function goto0(){
+		var rf_id = parseInt($('#RF_ID').val());
+		if( list_mans_0==null || list_mans_0.length==0 ){
+			return false;
+		}
+		var fid = parseInt($('#NAME_HUY0').val());
+		console.log("Go to gd cha");
+		e(rf_id, fid);
+		return false;
+	}
+	function goto1(){
+		var rf_id = parseInt($('#RF_ID').val());
+		if( list_mans_1==null ||  list_mans_1.length==0 ){
+			return false;
+		}
+		var fid = parseInt($('#NAME_HUY1').val());
+		console.log("Go to gd anh em");
+		e(rf_id, fid);
+		return false;
+	}
+	function goto2(){
+		var rf_id = parseInt($('#RF_ID').val());
+		if(  list_mans_2==null || list_mans_2.length==0 ){
+			return false;
+		}
+
+		var fid = parseInt($('#NAME_HUY2').val());
+		console.log("Go to gd con cai");
+		e(rf_id, fid);
+		return false;
+	}
+	function e(rf_id, fid){
+		if( rf_id<=0 ){
+			return;
+		}
+		$('.form-group').removeClass('has-error'); // clear error class
+		$('#modal_form_newmember').modal('show'); // show bootstrap modal
+		if( fid==0 ){
+			//
+		}
+		else{
+			$("#edit_family_msg").html('<img src="loading0.gif">');
+			
+			// Load data
+			var family = {
+				RF_ID: rf_id,
+				FAMILY_ID: fid
+			};
+			// ajax
+			$.ajax({
+				url : "load_family.php",
+				type : "POST",
+				dataType: "JSON",
+				data: family,
+				success: function(jsonData) {
+					$("#modal_form_newmember_title").html("SỬA THÔNG TIN");
+					list_mans = jsonData.data;
+					list_mans_0 = jsonData.data_0;
+					list_mans_1 = jsonData.data_1;
+					list_mans_2 = jsonData.data_2;
+					
+					$('#NAME_HUY0')
+						.find('option')
+						.remove()
+					;
+					if( list_mans_0!=null ){
+						for( i=0; i< list_mans_0.length; i++ ){
+							$('#NAME_HUY0').append($('<option/>', {
+								value: ''+list_mans_0[i].FAMILY_ID,
+								text : list_mans_0[i].FAMILY_LEVEL +"-"+list_mans_0[i].MANS_NAME_HUY
+							}));
+							save_MANS_NAME_HUY = list_mans_0[i].MANS_NAME_HUY;
+						}
+					}
+					
+					$('#NAME_HUY1')
+						.find('option')
+						.remove()
+					;
+					if( list_mans_1!=null ){
+						for( i=0; i< list_mans_1.length; i++ ){
+							$('#NAME_HUY1').append($('<option/>', {
+								value: ''+list_mans_1[i].FAMILY_ID,
+								text : list_mans_1[i].FAMILY_LEVEL +"-"+list_mans_1[i].MANS_NAME_HUY
+							}));
+						}
+					}
+					
+					$('#NAME_HUY2')
+						.find('option')
+						.remove()
+					;
+					if( list_mans_2!=null ){
+						for( i=0; i< list_mans_2.length; i++ ){
+							$('#NAME_HUY2').append($('<option/>', {
+								value: ''+list_mans_2[i].FAMILY_ID,
+								text : list_mans_2[i].FAMILY_LEVEL +"-"+list_mans_2[i].MANS_NAME_HUY
+							}));
+						}
+					}
+					//
+					reloadFormMan();
+					$("#edit_family_msg").html('');
+				},
+				error: function(jqXHR, textStatus, errorThrown) {
+					alert('Error '+ textStatus);
+				}
+			});
+		}
+	}
+</script>
+<!-- Bootstrap modal -->
+    <div class="modal fade" id="modal_form_newmember" tabindex="-1" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+					<h4 class="modal-title" id="modal_form_newmember_title">TẠO MỚI GIA ĐÌNH</h4>
+				</div>
+                <div class="modal-body form">
+					<div id="family_msg"></div>
+                    <form id="form_family" data-parsley-validate="" class="form-horizontal form-label-left" novalidate="">
+						<input type="hidden" id="RF_ID" name="RF_ID" value="0">
+						<input type="hidden" id="PATHER_UP" name="PATHER_UP" value="0">
+						<input type="hidden" id="FAMILY_ID" name="FAMILY_ID" value="0">
+						<input type="hidden" id="FAMILY_LEVEL" name="FAMILY_LEVEL" value="1">
+						<input type="hidden" id="FAMILY_THUTU" name="FAMILY_THUTU" value="0">
+						<input type="hidden" id="MANS_ID" name="MANS_ID" value="0">
+						<div class="col-sm-6">
+							<div class="form-group form-float">
+								<div class="form-line" style="white-space: nowrap;" >
+									<span class="btn btn-sm btn-warning"> GD Cha</span>
+									<button class="btn btn-sm btn-danger" onclick="return goto0()">&#8594;VềCha</button>
+									<br />
+									<SELECT name="NAME_HUY0" id="NAME_HUY0" style="background-color: #dc3545;">
+									</select>
+									<span class="help-block"></span>
+								</div>
+								<div class="form-line" style="white-space: nowrap;" >
+									<span class="btn btn-sm btn-warning"> GD Anh em</span>
+									<button class="btn btn-sm btn-primary" onclick="return goto1()">&#8594;</button>
+									<button class="btn btn-sm btn-primary" onclick="return newgd1()">+</button>
+									<br />
+									<SELECT name="NAME_HUY1" id="NAME_HUY1" style="background-color: #0069d9;">
+									</select>
+									<span class="help-block"></span>
+								</div>
+								<div class="form-line" style="white-space: nowrap;" >
+									<span class="btn btn-sm btn-warning"> GD con</span>
+									<button class="btn btn-sm btn-info" onclick="return goto2()">&#8594;</button>
+									<button class="btn btn-sm btn-info" onclick="return newgd2()">+</button>
+									<br />
+									<SELECT name="NAME_HUY2" id="NAME_HUY2" style="background-color: #17a2b8;">
+									</select>
+									<span class="help-block"></span>
+								</div>
+								<span id="edit_family_msg"></span>
+								<div class="form-line" style="white-space: nowrap;" >
+									<span class="btn btn-sm btn-primary">GIA ĐÌNH HIỆN TẠI</span>
+									<BR/>
+									<SELECT name="NAME_HUY" id="NAME_HUY" style="WIDTH:200px;">
+									</select>
+									<button class="btn btn-sm btn-primary" onclick="return addNewMans()">+</button>
+									<BR/>
+									<span class="help-block"></span>
+								</div>
+							</div>
+						</div>
+						<div class="col-sm-6">
+							<div class="form-group form-float">
+								<div class="form-line">
+									<span class="btn btn-sm btn-warning">THÔNG TIN NGƯỜI TRONG GD NÀY</span>
+									<BR/>
+									<input type="text" name="MANS_NAME_HUY" id="MANS_NAME_HUY" placeholder="">
+									<button type="button" class="btn btn-sm btn-success" onclick="save_family()" ><i class="fa fa-sign-in"></i> Lưu lại</button>
+									<button class="btn btn-sm btn-warning" onclick="return removeMans()">Xóa</button>
+									<span class="help-block"></span>
+								</div>
+							</div>
+						</div>
+						<div class="col-sm-6">
+							<div class="form-group form-float">
+								<div class="form-line">
+									<SELECT name="MANS_GENDER" id="MANS_GENDER">
+										<OPTION VALUE=m> Nam</OPTION>
+										<OPTION VALUE=f> Nữ</OPTION>
+									</SELECT>
+									<span class="help-block"></span>
+								</div>
+							</div>
+						</div>
+						<div class="col-sm-6">
+							<div class="form-group form-float">
+								<div class="form-line">
+									<SELECT name="MANS_CONTHUMAY" id="MANS_CONTHUMAY" >
+<option value=0> Con thứ - Không rõ</option><option value=1> Thứ 1</option><option value=2> Thứ 2</option><option value=3> Thứ 3</option><option value=4> Thứ 4</option><option value=5> Thứ 5</option><option value=6> Thứ 6</option><option value=7> Thứ 7</option><option value=8> Thứ 8</option><option value=9> Thứ 9</option><option value=10> Thứ 10</option><option value=11> Thứ 11</option><option value=12> Thứ 12</option><option value=13> Thứ 13</option><option value=14> Thứ 14</option><option value=15> Thứ 15</option><option value=16> Thứ 16</option><option value=17> Thứ 17</option><option value=18> Thứ 18</option><option value=19> Thứ 19</option>									</SELECT>
+									<span class="help-block"></span>
+								</div>
+							</div>
+						</div>
+						<div class="col-sm-6">
+							<div class="form-group form-float">
+								<div class="form-line">
+									<input type="text" name="MANS_DOB" id="MANS_DOB" placeholder="Ngày sinh">
+									<span class="help-block"></span>
+								</div>
+							</div>
+						</div>
+						<div class="col-sm-6">
+							<div class="form-group form-float">
+								<div class="form-line">
+									<input type="text" name="MANS_DOD" id="MANS_DOD" placeholder="Ngày mất">
+									<span class="help-block"></span>
+								</div>
+							</div>
+						</div>
+						<div class="col-sm-6">
+							<div class="form-group form-float">
+								<div class="form-line">
+									<input type="text" name="MANS_WOD" id="MANS_WOD" class="form-control" placeholder="Mộ táng tại đâu?">
+									<span class="help-block"></span>
+								</div>
+							</div>
+						</div>
+						<div class="col-sm-6">
+							<div class="form-group form-float">
+								<div class="form-line">
+									<SELECT name="MANS_HUONGTHO" id="MANS_HUONGTHO" class="form-control">
+<option value=0> Hưởng thọ-Không rõ</option><option value=1> 1 tuổi</option><option value=2> 2 tuổi</option><option value=3> 3 tuổi</option><option value=4> 4 tuổi</option><option value=5> 5 tuổi</option><option value=6> 6 tuổi</option><option value=7> 7 tuổi</option><option value=8> 8 tuổi</option><option value=9> 9 tuổi</option><option value=10> 10 tuổi</option><option value=11> 11 tuổi</option><option value=12> 12 tuổi</option><option value=13> 13 tuổi</option><option value=14> 14 tuổi</option><option value=15> 15 tuổi</option><option value=16> 16 tuổi</option><option value=17> 17 tuổi</option><option value=18> 18 tuổi</option><option value=19> 19 tuổi</option><option value=20> 20 tuổi</option><option value=21> 21 tuổi</option><option value=22> 22 tuổi</option><option value=23> 23 tuổi</option><option value=24> 24 tuổi</option><option value=25> 25 tuổi</option><option value=26> 26 tuổi</option><option value=27> 27 tuổi</option><option value=28> 28 tuổi</option><option value=29> 29 tuổi</option><option value=30> 30 tuổi</option><option value=31> 31 tuổi</option><option value=32> 32 tuổi</option><option value=33> 33 tuổi</option><option value=34> 34 tuổi</option><option value=35> 35 tuổi</option><option value=36> 36 tuổi</option><option value=37> 37 tuổi</option><option value=38> 38 tuổi</option><option value=39> 39 tuổi</option><option value=40> 40 tuổi</option><option value=41> 41 tuổi</option><option value=42> 42 tuổi</option><option value=43> 43 tuổi</option><option value=44> 44 tuổi</option><option value=45> 45 tuổi</option><option value=46> 46 tuổi</option><option value=47> 47 tuổi</option><option value=48> 48 tuổi</option><option value=49> 49 tuổi</option><option value=50> 50 tuổi</option><option value=51> 51 tuổi</option><option value=52> 52 tuổi</option><option value=53> 53 tuổi</option><option value=54> 54 tuổi</option><option value=55> 55 tuổi</option><option value=56> 56 tuổi</option><option value=57> 57 tuổi</option><option value=58> 58 tuổi</option><option value=59> 59 tuổi</option><option value=60> 60 tuổi</option><option value=61> 61 tuổi</option><option value=62> 62 tuổi</option><option value=63> 63 tuổi</option><option value=64> 64 tuổi</option><option value=65> 65 tuổi</option><option value=66> 66 tuổi</option><option value=67> 67 tuổi</option><option value=68> 68 tuổi</option><option value=69> 69 tuổi</option><option value=70> 70 tuổi</option><option value=71> 71 tuổi</option><option value=72> 72 tuổi</option><option value=73> 73 tuổi</option><option value=74> 74 tuổi</option><option value=75> 75 tuổi</option><option value=76> 76 tuổi</option><option value=77> 77 tuổi</option><option value=78> 78 tuổi</option><option value=79> 79 tuổi</option><option value=80> 80 tuổi</option><option value=81> 81 tuổi</option><option value=82> 82 tuổi</option><option value=83> 83 tuổi</option><option value=84> 84 tuổi</option><option value=85> 85 tuổi</option><option value=86> 86 tuổi</option><option value=87> 87 tuổi</option><option value=88> 88 tuổi</option><option value=89> 89 tuổi</option><option value=90> 90 tuổi</option><option value=91> 91 tuổi</option><option value=92> 92 tuổi</option><option value=93> 93 tuổi</option><option value=94> 94 tuổi</option><option value=95> 95 tuổi</option><option value=96> 96 tuổi</option><option value=97> 97 tuổi</option><option value=98> 98 tuổi</option><option value=99> 99 tuổi</option><option value=100> 100 tuổi</option><option value=101> 101 tuổi</option><option value=102> 102 tuổi</option><option value=103> 103 tuổi</option><option value=104> 104 tuổi</option><option value=105> 105 tuổi</option><option value=106> 106 tuổi</option><option value=107> 107 tuổi</option><option value=108> 108 tuổi</option><option value=109> 109 tuổi</option><option value=110> 110 tuổi</option><option value=111> 111 tuổi</option><option value=112> 112 tuổi</option><option value=113> 113 tuổi</option><option value=114> 114 tuổi</option><option value=115> 115 tuổi</option><option value=116> 116 tuổi</option><option value=117> 117 tuổi</option><option value=118> 118 tuổi</option><option value=119> 119 tuổi</option>									</SELECT>
+									<span class="help-block"></span>
+								</div>
+							</div>
+						</div>
+						<div class="col-sm-6">
+							<div class="form-group form-float">
+								<div class="form-line">
+									<input type="text" name="MANS_DETAIL" id="MANS_DETAIL" class="form-control" placeholder="Mô tả chi tiết thêm...">
+									<span class="help-block"></span>
+								</div>
+							</div>
+						</div>
+                    </form>
+                </div>
+				<div class="modal-footer justify-content-start">
+					<button type="button" class="btn btn-success" onclick="save_family()" ><i class="fa fa-sign-in"></i> Lưu lại</button>
+					<button class="btn btn-primary" data-dismiss="modal" type="button"> Bỏ qua</button>
+				</div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+  </body>
+</html>

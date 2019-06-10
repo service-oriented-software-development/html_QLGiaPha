@@ -1,0 +1,17 @@
+package jsoft.ads.member;
+
+import java.sql.ResultSet;
+
+import Common.ShareControl;
+import jsoft.ads.object.FamilyTreeModel;
+
+public interface Member extends ShareControl{
+	public boolean addFamilyTree(FamilyTreeModel item);
+	public boolean editFamilyTree(FamilyTreeModel item);
+	public boolean delFamilyTree(FamilyTreeModel item);
+	
+	public ResultSet getChild(int id);
+	public ResultSet getFamilyTree(int id);
+	public ResultSet getFamilyTrees();
+	public ResultSet getFamilyTrees(FamilyTreeModel similar, int at, byte total);
+}

@@ -1,0 +1,70 @@
+package Controller.web;
+
+import java.io.IOException;
+
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import BLL.UserBLL;
+import Common.ConnectionPool;
+import Common.ConnectionPoolImpl;
+import Model.UserModel;
+import Utils.HttpUtil;
+import DAO.user.*;;
+
+//@WebServlet(urlPatterns = {"/trangchu"})
+@WebServlet("/trangchu")
+public class Home extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+       
+    /**
+     * @see HttpServlet#HttpServlet()
+     */
+    public Home() {
+        super();
+        // TODO Auto-generated constructor stub
+    }
+
+	/**
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		RequestDispatcher rd = request.getRequestDispatcher("views/web/home.jsp");
+		rd.forward(request, response);
+		
+		
+	}
+
+	/**
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		String action = request.getParameter("action");
+		ConnectionPool cp  =  (ConnectionPool)getServletContext().getAttribute("Pool");
+		UserBLL us = new UserBLL(cp);
+		if(cp==null) {
+			getServletContext().setAttribute("Pool", us.getCP());
+		}
+		
+		if(action!=null && action.equals("login")){
+			System.out.println("hahah");
+			String username = request.getParameter("loginid");
+			String userpass = request.getParameter("pass");
+			UserModel b = us.getUser(username, userpass);
+			us.releaseConnection();
+			if(b!=null) {
+				
+				response.sendRedirect("/BTL_nhom2/admin");			
+			}else {
+				response.sendRedirect("/BTL_nhom2/trangchu");
+			}
+		}else {
+			response.sendRedirect("/BTL_nhom2/trangchu");
+		}
+	}
+
+}

@@ -7,9 +7,9 @@
 <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="<c:url value='adcss/bootstrap.min.css'/>" >
-    <link href="<c:url value='adcss/bootstrap.icon-large.min.css'/>" rel="stylesheet">
-	<link rel='stylesheet' href="<c:url value='adcss/all.css'/>" >
+    <link rel="stylesheet" href="<c:url value='/adcss/bootstrap.min.css'/>" >
+    <link href="<c:url value='/adcss/bootstrap.icon-large.min.css'/>" rel="stylesheet">
+	<link rel='stylesheet' href="<c:url value='/adcss/all.css'/>" >
 	<meta content="giapha, giatoc, tocpha, giaphả, giatộc, gia pha, gia toc, toc pha, gia phả, gia tộc, tộc phả,caygiapha, cay gia pha, cay gia dinh" name=keywords>
 	<meta property="og:url" content="http://www.vietnamgiapha.com" />
 	<meta property="og:title" content="Việt Nam Gia phả" />
@@ -22,7 +22,7 @@
 <nav class="navbar navbar-dark bg-dark navbar-expand-sm">
 	  <div class="container">
 		<a class="navbar-brand" href="<c:url value='#'/>">
-			<img src="<c:url value='adimgs/exit.png'/>" alt="vietnamgiapha"/>VIỆT NAM GIA PHẢ
+			<img src="<c:url value='/adimgs/exit.png'/>" alt="vietnamgiapha"/>VIỆT NAM GIA PHẢ
 		</a>
 		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-list-11" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
 		  <span class="navbar-toggler-icon"></span>
@@ -61,7 +61,7 @@
 	<div class="alert alert-warning" role="alert">
 		<p>Hiện tại bạn chưa có gia phả</p>
 		<p>Nếu muốn tạo mới gia phả
-		<a class="btn btn-sm btn-success" href="<c:url value='/edit'/>">Tạo mới tại đây</a></p>
+		<a class="btn btn-sm btn-success" href="<c:url value='/individual/ae'/>">Tạo mới tại đây</a></p>
 	</div>
 	
 	<div class="container-fluid content-row" id="list_gp">
@@ -71,9 +71,9 @@
 		<p style="color:white">Dự án lưu trữ gia phả của người Việt, ra đời từ năm 2003 đến nay</p>
 	  </div>
 	</nav>
-    <script src="<c:url value='adjs/js/jquery-3.2.1.min.js'/>"/>
-    <script src="<c:url value='adjs/js/popper.min.js'/>" />
-    <script src="<c:url value='adjs/js/bootstrap.min.js'/>" />
+    <script src="<c:url value='/adjs/js/jquery-3.2.1.min.js'/>"/>
+    <script src="<c:url value='/adjs/js/popper.min.js'/>" />
+    <script src="<c:url value='/adjs/js/bootstrap.min.js'/>" />
 <script type="text/javascript">
 	function ucFirstAllWords( str )
 	{
@@ -114,7 +114,7 @@ loadGp();
 	});
 	
 	function loadGp(){
-		$("#list_gp").html('<img src="<c:url value='adimgs/loading1.gif'/>"/>');
+		$("#list_gp").html('<img src="<c:url value='/adimgs/loading1.gif'/>"/>');
 		//
 		var name = $("#name").val();
 		var sendInfo = {
@@ -163,7 +163,7 @@ loadGp();
 			$("#login_msg").html('Có lỗi');
 			return;
 		}
-		$("#login_msg").html('<img src="<c:url value='adjs/loading1.gif'/>"/>');
+		$("#login_msg").html('<img src="<c:url value='/adjs/loading1.gif'/>"/>');
 
 		// ajax
         $.ajax({
@@ -225,7 +225,7 @@ loadGp();
 	}
 	function login()
 	{
-		$("#login_msg").html('<img src="<c:url value='adimgs/loading1.gif'/>"/>');
+		$("#login_msg").html('<img src="<c:url value='/adimgs/loading1.gif'/>"/>');
 		var username = $("#loginid").val().trim();
 		var password = $("#pass").val().trim();
 		var error = 0;
@@ -320,7 +320,7 @@ loadGp();
 			$("#register_msg").html('Có lỗi nhập thông tin');
 			return;
 		}
-		$("#register_msg").html('<img src="<c:url value='adimgs/loading1.gif'/>"/>');
+		$("#register_msg").html('<img src="<c:url value='/adimgs/loading1.gif'/>"/>');
 		
 		var sendInfo = {
 			password: password,
@@ -351,7 +351,7 @@ loadGp();
 	function checke()
 	{
 		//console.log("Đang ký");
-		$("#register_msg").html('<img src="<c:url value='adimgs/loading1.gif'/>"/>');
+		$("#register_msg").html('<img src="<c:url value='/adimgs/loading1.gif'/>"/>');
 		var email = $("#email").val().trim();
 		if( isEmail(email)==false ){
 			$('[name="email"]').parent().parent().addClass('error');
@@ -397,7 +397,7 @@ loadGp();
 	function checku()
 	{
 		//console.log("Đang ký");
-		$("#register_msg").html('<img src="<c:url value='adimgs/loading1.gif'/>"/>');
+		$("#register_msg").html('<img src="<c:url value='/adimgs/loading1.gif'/>"/>');
 		var username = $("#username").val().trim();
 		var email = $("#email").val().trim();
 		if( username.length<5 || username.indexOf(" ")>-1 ){
@@ -464,7 +464,7 @@ loadGp();
 			$("#reset_msg").html('Có lỗi');
 			return;
 		}
-		$("#reset_msg").html('<img src="<c:url value='adjs/loading1.gif'/>"/>');
+		$("#reset_msg").html('<img src="<c:url value='/adjs/loading1.gif'/>"/>');
 		var sendInfo = {
 			code: code,
 			reset_pass:reset_pass,

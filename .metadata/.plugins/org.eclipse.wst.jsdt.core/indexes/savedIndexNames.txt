@@ -1,0 +1,8 @@
+INDEX VERSION 1.4+D:\Giapha\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes
+1835520744.index
+925839923.index
+2621875093.index
+2180143192.index
+1461058416.index
+2665287405.index
+124130146.index

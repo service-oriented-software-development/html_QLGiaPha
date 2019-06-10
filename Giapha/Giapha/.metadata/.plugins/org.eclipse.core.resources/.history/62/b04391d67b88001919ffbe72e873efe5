@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
+  <display-name>BTL_nhom2</display-name>
+  <welcome-file-list>
+    <welcome-file>index.jsp</welcome-file>
+  </welcome-file-list>
+  <servlet>
+    <description></description>
+    <display-name>IndividualAE</display-name>
+    <servlet-name>IndividualAE</servlet-name>
+    <servlet-class>jsoft.ads.individual.IndividualAE</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>IndividualAE</servlet-name>
+    <url-pattern>/individual/ae</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>AccountView</display-name>
+    <servlet-name>AccountView</servlet-name>
+    <servlet-class>jsoft.ads.account.AccountView</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>AccountView</servlet-name>
+    <url-pattern>/account/view</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ParentageView</display-name>
+    <servlet-name>ParentageView</servlet-name>
+    <servlet-class>jsoft.ads.parentage</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ParentageView</servlet-name>
+    <url-pattern>/parentage/view</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>AdminView</display-name>
+    <servlet-name>AdminView</servlet-name>
+    <servlet-class>jsoft.ads.main.AdminView</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>AdminView</servlet-name>
+    <url-pattern>/admin/view</url-pattern>
+  </servlet-mapping>
+</web-app>
