@@ -1,0 +1,129 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head><meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><meta http-equiv="X-UA-Compatible" content="IE=9" /><link rel="shortcut icon" href="img/utils/favicon.ico" type="image/x-icon" /><link rel="icon" href="img/utils/favicon.ico" type="image/x-icon" /><title>
+	Phả đồ - Gia phả Việt Nam
+</title><script type = "text/javascript" src = "js/jquery.min.1.7.1.js"></script><link href="css/layout.css" rel="stylesheet" type="text/css" /><link href="css/common.css" rel="stylesheet" type="text/css" /><link href="css/default.css" rel="stylesheet" type="text/css" /><script type = "text/javascript" src = "js/fe_default.js"></script><script type = "text/javascript" src = "ctrls/jquery.ui.widget.js"></script><script type = "text/javascript" src = "ctrls/jquery.fileupload.js"></script><script type = "text/javascript" src = "plugins/utils/jquery.modal.min.js"></script><link href="plugins/utils/jquery.modal.css" rel="stylesheet" type="text/css" /><link href="plugins/ft/pub_phado.css" rel="stylesheet" type="text/css" /><link href="plugins/tab/tab.css" rel="stylesheet" type="text/css" /><script type = "text/javascript" src = "plugins/tab/tab.js"></script><script type = "text/javascript" src = "plugins/ft/d3.js"></script><script type = "text/javascript" src = "js/module/pub_phado.js"></script><script language ="javascript" type = "text/javascript">var url='ctrls/json/pub_phado.ashx?id=28202&pn=-1&t=1';</script><script type = "text/javascript" src = "plugins/ft/pubhtree.js"></script></head>
+<body>
+    <form name="form1" method="post" action="./default.aspx?cp=phado&amp;id=28202" id="form1">
+<div>
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="wEPDwULLTIwNDc4ODU0OTYPFgIeE1ZhbGlkYXRlUmVxdWVzdE1vZGUCAWRkMaF5hy8y7dsw3WN4aA2xkS2pewNcN608DXECFI46qac=" />
+</div>
+
+
+<script type="text/javascript" src="ajaxpro/prototype.ashx"></script>
+<script type="text/javascript" src="ajaxpro/core.ashx"></script>
+<script type="text/javascript" src="ajaxpro/converter.ashx"></script>
+<script type="text/javascript" src="ajaxpro/DVG.Classes.Core.FamilyTree.Dvg_Tree_BLL,DVG.Classes.Core.ashx"></script>
+<script type="text/javascript" src="ajaxpro/DVG.Classes.Core.FamilyTree.Phado,DVG.Classes.Core.ashx"></script>
+
+<div>
+
+	<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="CA0B0334" />
+</div>        
+        
+
+<div class = "fw_body">
+    
+
+<div id="header">
+    <div id="banner" class="banner txtC">
+        <img src="img/head/cen_bn.jpg" style="height:80px" />
+    </div>
+    <table border="0" cellpadding="0" cellspacing="0" width="100%" class="phado_info">
+        <tbody><tr>
+            <td class="subleft">
+                <a href="http://giaphavietnam.vn/">TRANG CHỦ</a> | <a href='default.aspx?cp=dongho&id=28202'>Thông tin chung</a>
+            </td>
+            <td class="subcen">
+                Trần Công Tiên Chỉnh
+            </td>
+            <td class="subright">
+                <p class="creator">Người tạo: Trần Xuân Trường</p>
+                <a href="javascript:void(0)" class="tree_option">Trợ giúp</a>
+            </td>
+        </tr>
+    </tbody></table>
+</div>
+
+<div class="htree" id="htree"></div>
+
+<div id="float_panel"></div>
+<div class="right_menu" id="dlginfo">
+    <h4 class="rm_title">Bảng thông tin <a class="closeInf" onclick="hideInf()">&nbsp;</a></h4>
+    <p class="more_info"><a href="javascript:void(0)" onclick="showInfo(0)">Xem thông tin chi tiết</a></p>
+    <p class="view_laters"><a href="">Xem đời sau</a></p>
+    <p class="view_vtree"><a href="" >Xem cây dạng thẳng đứng</a></p>
+    <p class="view_root"><a href="" >Trở về gốc</a></p>
+</div>
+<div id="tree_guide">
+    <h2 class="optbox_title">Hướng dẫn xem phả đồ</h2>
+    <div class="guide_content">
+        <ul>
+            <li>Cuộn chuột giữa để Phóng to - Thu nhỏ màn hình hiển thị</li>
+            <li>Bấm chuột trái vào thành viên để Ẩn - Hiện các nhánh cây con</li>
+            <li>Giữ chuột trái và di chuột để di chuyển màn hình theo hướng mong muốn</li>
+            <li>Bấm chuột phải vào từng thành viên trong cây gia phả để xem các thông tin khác, bao gồm:
+                <i><ul>
+                    <li><b>Xem thông tin chi tiết: </b>Xem các thông tin về thành viên đang chọn</li>
+                    <li><b>Xem đời sau: </b>Xem cây gia phả đời sau của thành viên đang chọn</li>
+                    <li><b>Xem cây dạng thẳng đứng: </b>Xem cây gia phả dạng thẳng đứng</li>
+                    <li><b>Trở về gốc: </b>Hiển thị lại cây gia phả bắt đầu từ thành viên đầu tiên</li>
+                </ul></i>
+            </li>
+            <li>Lưu ý: Trường hợp số thành viên của cây gia phả quá đông, khó quan sát tổng thể, bạn có thể bấm chuột phải vào thành viên bất kỳ, chọn <b>Xem đời sau</b>, việc này sẽ giúp bạn hiển thị gọn cây gia phả tính từ đời thành viên bạn đang chọn, do đó tốc độ sẽ nhanh hơn</li>
+        </ul>
+    </div>
+</div>
+<div class="dialog" id="dlg_meminfo" style="width: 600px; height: 420px">
+    <div class="dlg_title">Thông tin thành viên</div>
+    <div class="dlg_content">
+        <div class="frm_loadstatus" style="display:none"></div>
+        <div class="tabhead">
+            <a class="active" id="for1">Thông tin chính</a>
+            <a id="for2">Thông tin khác</a>
+        </div>
+        <div class="tabct">
+            <div id="tab1" class="ctab">            
+                <table border="0" style="width: 100%" class="tbl_data">
+                    <tr>
+                        <td style="width:100px" class="bold">Họ tên :</td>
+                        <td id="fname" colspan="3" style="width:360px; white-space:normal"></td>
+                        <td rowspan="5"><img id="image" src="" style="height:150px; max-width: 100px" /></td>
+                    </tr>
+                    <tr>
+                        <td class="bold">Tên thường gọi :</td>
+                        <td id="cname" colspan="3" style="width:360px; white-space:normal"></td>
+                    </tr>
+                    <tr>
+                        <td class="bold">Tên vợ/chồng :</td>
+                        <td id="pname" colspan="3" style="width:360px; white-space:normal"></td>
+                    </tr>
+                    <tr>
+                        <td class="bold">Ngày sinh :</td>
+                        <td id="bdate"></td>
+                        <td class="bold" style="width:80px">Giới tính :</td>
+                        <td id="gender"></td>
+                    </tr>
+                    <tr>
+                        <td class="bold">Hiện trạng :</td>
+                        <td id="livestatus"></td>
+                        <td id="ript"class="bold"></td>
+                        <td id="rdate"></td>
+                    </tr>
+                </table>            
+            </div>
+            <div id="tab2" class="ctab">            
+                <div id="memhis"></div>
+            </div>
+        </div>        
+    </div>
+</div>
+</div>
+
+    </form>
+    <a href="javascript:void(0)" id="toTop">to Top</a>
+</body>
+</html>

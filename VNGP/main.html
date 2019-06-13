@@ -1,0 +1,194 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css" >
+    <link href="css/bootstrap.icon-large.min.css" rel="stylesheet">
+	<link rel='stylesheet' href='css/all.css' >
+	<link href="user.css" rel="stylesheet" type="text/css"/>
+	<script language="JavaScript" src="user.js" ></script>
+	<meta content="giapha, giatoc, tocpha, giaphả, giatộc, gia pha, gia toc, toc pha, gia phả, gia tộc, tộc phả,caygiapha, cay gia pha, cay gia dinh" name=keywords>
+	<meta property="og:url" content="http://www.vietnamgiapha.com" />
+	<meta property="og:title" content="Việt Nam Gia phả" />
+	<meta property="og:description" content="Nơi lưu trữ Gia phả của người Việt Nam" />
+	<meta property="og:image" content="exit.png"/>
+	<meta property="og:type" content="website" />
+	<title>Việt Nam Gia Phả</title>
+  </head>
+  <body>
+
+
+	<!-- HEADER NAV - BEGIN -->
+	<nav class="navbar navbar-dark bg-dark navbar-expand-sm">
+	  <div class="container">
+		<a class="navbar-brand" href="#">
+			<img src="exit.png" alt="vietnamgiapha">VIỆT NAM GIA PHẢ
+		</a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-list-11" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+		  <span class="navbar-toggler-icon"></span>
+		</button>
+		<div class="collapse navbar-collapse" id="navbar-list-11">
+		  <ul class="navbar-nav ml-auto">
+			<li class="nav-item active">
+			  <a class="nav-link" href="https://storage.googleapis.com/google-code-archive-downloads/v2/code.google.com/vietnamgiapha/vietnamgiapha1.3.5.1-jre.zip" target="_blank"><span class="glyphicon glyphicon-envelope"></span> Download Phần Mềm</a>
+			</li>
+			<li class="nav-item">
+			  <a class="nav-link" href="http://baiviet.vietnamgiapha.com/2011/04/gia-pha-truyen-thong-va-hien-ai.html" target="_blank">Gia phả là gì</a>
+			</li>
+			<li class="nav-item">
+			  <a class="nav-link" href="http://baiviet.vietnamgiapha.com/p/huong-dan-lam-gia-pha-tu-au-en-cuoi.html" target="_self">Hướng dẫn làm gia phả</a>
+			</li>
+			<li class="nav-item">
+<a class="nav-link" href="Việt Nam Gia Phả.html" onclick="logout()">Đăng Xuất</a>			
+			  
+			</li>
+		  </ul>
+		</div>
+	  </div>
+	</nav>
+	<!-- HEADER NAV - END -->
+
+		
+	
+
+	<div class="container">
+	<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#edit">
+  Launch demo modal
+	</button>
+	<div class="modal fade" id="edit" tabindex="-1" role="dialog">
+		<div class="main1200">
+			<form name="frmUser" action="" method="">
+				<div class="row row-heading">
+					Thông tin gia đình
+				</div>
+				
+				<div class="row">
+					<div class="c2 lc">Họ Tên</div>
+					<div class="c10">
+						<input type="text" name="txtAccName" class="c20 space">
+					</div>
+					<div class="clr"></div>
+				</div>
+				
+				
+				
+				<div class="row">
+					<div class="c2 lc">Tên cha</div>
+					<div class="c10">
+						<input type="text" name="txtAccEmail" class="c20 space">
+					</div>
+					<div class="clr"></div>
+				</div>
+				
+				
+				
+				<div class="row row-heading">
+					Thông tin chi tiết
+				</div>
+				
+				<div class="row">
+					<div class="c2 lc">Tên đầy đủ</div>
+					<div class="c10">
+						<input type="text" name="txtFullname" class="c40 space" />
+					</div>
+					<div class="clr"></div>
+				</div>
+				
+				<div class="row">
+					<div class="c2 lc">Giới tính</div>
+					<div class="c10">
+						<select name="slcGender" class="c40 space">
+							<option value="0">Nam</option>
+							<option value="1">Nữ</option>
+							<option value="2">Nam-->Nữ</option>
+							<option value="3">Nữ-->Nam</option>
+							<option value="4">Nam---</option>
+							<option value="5">Nữ---</option>
+							<option value="6" selected>---</option>
+						</select>
+					</div>
+					<div class="clr"></div>
+				</div>
+				
+				
+				
+				<div class="row">
+					<div class="c2 lc">Ngày sinh</div>
+					<div class="c10">
+						<input type="date" name="txtDate" class="c40 space" />
+					</div>
+					<div class="clr"></div>
+				</div>
+				
+				<div class="row">
+					<div class="c2 lc">Ngày mất</div>
+					<div class="c10">
+						<input type="date" name="txtDate" class="c40 space" />
+					</div>
+					<div class="clr"></div>
+				</div>
+				
+				<div class="row">
+					<div class="c2 lc">Hưởng thọ</div>
+					<div class="c10">
+						<script language="JavaScript">
+							generatePermis(); //có thể bỏ this
+						</script>
+					</div>
+					<div class="clr"></div>
+				</div>
+				
+				<div class="row">
+					<div class="c2 lc">Mộ táng</div>
+					<div class="c10">
+						<input type="text" name="txtAddress" class="c40 space" />
+					</div>
+					<div class="clr"></div>
+				</div>
+				
+				<div class="row">
+					<div class="c2 lc">Mô tả chi tiết</div>
+					<div class="c10">
+						<textarea rows="5" name="txtnote" class="space c40"> </textarea>
+					</div>
+					<div class="clr"></div>
+				</div>
+
+				<div class="row row-buttons">
+					<input type="button"  value="Lưu" onClick ="checkValidUser(this.form)"/>
+					<input type="button"  value="Thoát" />
+					
+				</div>
+				
+			</form>
+			
+		</div>
+		</div>
+	</div>	
+	
+	
+	
+	<div class="container-fluid content-row" id="list_gp">
+	</div>
+	<nav class="navbar navbar-dark bg-dark navbar-expand-sm">
+	  <div class="container">
+		<p style="color:white">Dự án lưu trữ gia phả của người Việt, ra đời từ năm 2003 đến nay</p>
+	  </div>
+	</nav>
+	<script type="text/javascript">
+	function open_login()
+	{
+
+	$('.form-group').removeClass('has-error');
+		$('#edit').modal('show'); // show bootstrap modal
+
+	}
+	</script>
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js" ></script>
+  </body>
+</html>

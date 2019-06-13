@@ -1,0 +1,164 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head><title>
+	Thông tin dòng họ - Gia phả Việt Nam
+</title><script type = "text/javascript" src = "js/jquery.min.1.7.1.js"></script><link href="css/layout.css" rel="stylesheet" type="text/css" /><link href="css/common.css" rel="stylesheet" type="text/css" /><link href="css/ucp.css" rel="stylesheet" type="text/css" /><script type = "text/javascript" src = "js/ucp.js"></script><script type = "text/javascript" src = "plugins/json2html/json2html.js"></script><script type = "text/javascript" src = "plugins/json2html/jquery.json2html.js"></script><script type = "text/javascript" src = "plugins/fckeditor/ckeditor.js"></script><script type = "text/javascript" src = "js/module/ucp_treeinf.js"></script></head>
+<body>
+    <form name="form1" method="post" action="ucp.aspx?cp=thong-tin-dong-ho" id="form1">
+<div>
+<input type="hidden" name="__EVENTTARGET" id="__EVENTTARGET" value="" />
+<input type="hidden" name="__EVENTARGUMENT" id="__EVENTARGUMENT" value="" />
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="wEPDwUKLTg3MzMwNzE5MA8WAh4TVmFsaWRhdGVSZXF1ZXN0TW9kZQIBZBgBBR5fX0NvbnRyb2xzUmVxdWlyZVBvc3RCYWNrS2V5X18WAgUdY3RsMDIkbGVmdF9jdHJsMCRsb2dvdXQkY3RsMDEFHWN0bDAyJGxlZnRfY3RybDAkbG9nb3V0JGN0bDAzadN+P9zhWVj2MoOhWVvrb/1oQdzCWA6YBcCm6q2/Gy4=" />
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+var theForm = document.forms['form1'];
+if (!theForm) {
+    theForm = document.form1;
+}
+function __doPostBack(eventTarget, eventArgument) {
+    if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
+        theForm.__EVENTTARGET.value = eventTarget;
+        theForm.__EVENTARGUMENT.value = eventArgument;
+        theForm.submit();
+    }
+}
+//]]>
+</script>
+
+
+
+<script type="text/javascript" src="ajaxpro/prototype.ashx"></script>
+<script type="text/javascript" src="ajaxpro/core.ashx"></script>
+<script type="text/javascript" src="ajaxpro/converter.ashx"></script>
+<script type="text/javascript" src="ajaxpro/DVG.Providers.Services.Membership_BLL,DVG.Providers.ashx"></script>
+<script type="text/javascript" src="ajaxpro/DVG.Classes.Core.FamilyTree.Dvg_Tree_BLL,DVG.Classes.Core.ashx"></script>
+
+<div>
+
+	<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="1B1595A3" />
+	<input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="wEdAAKrmIrBZPxYN6fHGmL1FQBHtvbLCqqcKiHAzR+1l9mm/TAuSWXG6uBFliaH6afUAsfzl3JJ6au55HPtNm1SJU4F" />
+</div>
+        
+<div class = "main_frame">
+    <div class = "ucp_def_header">
+        
+
+<div class="banner txtC">
+    <img src="img/head/cen_bn.jpg" style="height:80px" />
+</div>
+<table width="100%" cellspacing="0" cellpadding="0" border="0" class="ucp_info">
+    <tbody><tr><td></td>
+        <td class="subleft">
+            <a href="http://giaphavietnam.vn/">TRANG CHỦ</a> | 
+        </td>
+        <td class="subcen">
+            Đào Hữu
+        </td>
+        <td class="subright">
+            Người tạo: duongskbg
+            
+        </td><td></td>
+    </tr>
+</tbody></table><div style = "clear: both"></div>
+    </div>
+    <div class = "ucp_def_body">
+        <div class = "ucp_def_left">
+            
+<div class="ucpleft_group" id="lgr">
+    <h2 class = "title">Dòng họ</h2>
+    <div class = "gitem">
+        <a href = "ucp.aspx?cp=thong-tin-dong-ho">Thông tin dòng họ</a>
+        <a href = "ucp.aspx?cp=quan-ly-pha-do">Quản lý phả đồ</a>
+        <a href = "ucp.aspx?cp=danh-sach-thanh-vien">Danh sách thành viên</a>
+        <a href = "ucp.aspx?cp=nttt">Nghĩa trang dòng họ</a>
+        <a href = "ucp.aspx?cp=album">Album ảnh</a>
+    </div>    
+    <h2 class = "title">Tin tức</h2>
+    <div class = "gitem">
+        <a href = "ucp.aspx?cp=news-detail">Viết bài mới</a>
+        <a href = "ucp.aspx?cp=created-news">Tin bài đã tạo</a>
+    </div>
+    <h2 class = "title">Tin nhắn</h2>
+    <div class = "gitem">
+        
+        <a href = "javascript:void(0)">Soạn tin nhắn</a>
+        <a href = "javascript:void(0)">Hộp thư đến</a>
+        <a href = "javascript:void(0)">Tin đã gửi</a>
+    </div>
+    <h2 class = "title">Account</h2>
+    <div class = "gitem">
+        <a href = "ucp.aspx?cp=accinfo">Thông tin tài khoản</a>
+        <a href = "ucp.aspx?cp=change_pwd">Đổi mật khẩu</a>
+        <a id="ctl02_left_ctrl0_logout" href="javascript:__doPostBack(&#39;ctl02$left_ctrl0$logout$ctl00&#39;,&#39;&#39;)">Đăng xuất</a>
+    </div>
+</div>
+
+
+        </div>
+        <div class = "ucp_def_right">
+            
+
+<div class="page_title" style="margin-bottom: 15px">
+    <h2>Thông tin dòng họ</h2>
+    <div class="toolbox"><a href="javascript:void(0)" id="btn_save" class="ubtn save">Lưu lại</a></div>
+</div>
+<div class="load_progress"></div>
+<table border="0" style="width: 100%; border-collapse: collapse" class="ucp_tbl form">
+    <tr><td></td><td id="msg" colspan="5"></td></tr>
+    <tr>
+        <td style="width: 110px">Tên dòng họ</td>
+        <td style="width: 400px"><input type="text" name="FamilyName" style="width: 380px" /></td>
+        <td style="width: 120px">Ngày giỗ họ (âm lịch)</td>
+        <td style="width: 180px"><input type="text" name="Anniversary" /></td>
+        <td style="width: 85px">Ngày tạo :</td>
+        <td id="created_date"></td>
+    </tr>
+    <tr>
+        <td>Khẩu hiệu dòng họ</td>
+        <td colspan="3"><input type="text" name="Slogan" style="width: 683px" /></td>
+        <td>Số thành viên :</td>
+        <td id="member_count"></td>
+    </tr>
+    <tr>
+        <td>Địa chỉ</td>
+        <td colspan="3"><input type="text" name="Address" style="width: 683px" /></td>
+        <td>Số lượt xem :</td>
+        <td id="view_count"></td>
+    </tr>
+    <tr>
+        <td>Mức công khai</td>
+        <td>
+            <select id="cboPublicLevel" style="width: 150px; height: 25px; float: left">
+                <option selected="selected" value="2">Công khai</option>
+                <option value="1">Riêng tư</option>
+            </select>
+            <div style="float: left; padding-left: 25px">
+                Mật khẩu truy nhập <input type="text" name="Password" style="width:100px" />
+            </div>
+        </td>
+        <td>Trạng thái Gia phả:</td>
+        <td colspan="3" id="gp_status"></td>
+    </tr>
+    <tr>
+        <td style="vertical-align: top">Lời giới thiệu</td>
+        <td colspan="7"><textarea name="Description" id="txtDescription"></textarea><input type="hidden" id="tree_id" /></td>
+    </tr>
+</table>
+    
+<script type="text/javascript">
+    CKEDITOR.replace('txtDescription', { customConfig: '/plugins/fckeditor/ucp_toolbar.js' });
+</script>
+        </div>
+    </div>
+    <div class = "ucp_def_footer">
+        
+    </div>
+</div>
+    </form>
+</body>
+</html>

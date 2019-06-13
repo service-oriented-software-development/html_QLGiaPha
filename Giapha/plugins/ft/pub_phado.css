@@ -1,0 +1,69 @@
+body {
+}
+
+#header {position: absolute; z-index: 100; width: 100%}
+.banner { background: url(../../img/utils/ucp_loopbg.png) scroll repeat-x left center; margin: 0 !important;}
+.phado_info { font-family: arial;font-size: 11px; }
+.phado_info td.subleft { background: url("images/subinfo_left.png") no-repeat scroll right top; min-width: 342px; }
+.phado_info td.subcen { color: yellow; background: url("images/subinfo_cen.png") no-repeat scroll center top; width: 602px; padding-top: 8px; overflow: hidden; font-size: 13px;}
+.phado_info td.subright { background: url("images/subinfo_right.png") no-repeat scroll left top; min-width: 322px; padding-left: 20px; text-align: left; text-transform: none; position: relative }
+.phado_info td { color: #fff; font-weight: bold; height: 65px; padding-top: 2px; text-align: center; text-transform: uppercase; vertical-align: top; }
+.phado_info td a { padding: 0 5px; color: #fff }
+.create_gp_intro p {font-weight: bold; padding: 3px 0; color: red }
+a.tree_option { position: absolute; left: 245px;text-decoration: underline !important; display: inline-block; padding-left: 18px !important; background: url(images/options.png) no-repeat scroll left center;}
+td.subright p.creator {float:left;}
+
+.node { cursor: pointer; }
+.overlay{ background-color:#fff; }
+.node circle { fill: #fff; stroke: steelblue; stroke-width: 1.5px; }
+.node rect { fill: #FDDF6D; }
+.node .outside {fill: #fff}
+.node div.bound { background: url(images/mframe.png) no-repeat scroll center center; width: 58px; height: 90px }
+.node text { font-size:10px; font-family:sans-serif; white-space:nowrap }
+.node p.fullname { width: 98%; font-size:8px; text-align: center; font-family:arial}
+.node p.nsnm { width: 98%; font-size:8px; text-align: center; font-family:arial }
+.link { fill: none; stroke: #000; stroke-width: 1.5px; }
+.templink { fill: none; stroke: red; stroke-width: 3px; }
+.ghostCircle.show{ display:block; }
+.ghostCircle, .activeDrag .ghostCircle{ display: none; }
+
+.right_menu { position: absolute; display: none; width: 180px; height: 166px; background: #E7DD99 url(images/ct_bg.png) no-repeat scroll center center; border: 1px solid #DC5800; border-radius: 5px; font-family: arial}
+.right_menu h4.rm_title { font-size: 12px; font-weight: bold; color: white; margin: 0 0 6px 0; padding: 5px; background: linear-gradient(90deg, red, white) }
+.right_menu h4 .closeInf {display:block; background: url(images/close.png) no-repeat scroll center center; width: 16px; height: 16px; position: relative; right: -3px; top: -3px; float: right; opacity: 0.7}
+a.closeInf:hover {text-decoration:none; opacity: 1}
+.right_menu p { margin: 0 1px; padding: 6px 3px 6px 25px; }
+
+.right_menu p a { font-size: 12px; text-decoration: none; color:#000 }
+.right_menu p a:hover, .right_menu p:hover a { color: red }
+.right_menu p.more_info { background: url(images/more_info.png) no-repeat scroll 5px center }
+.right_menu p.view_laters { background: url(images/child.png) no-repeat scroll 5px center }
+.right_menu p.view_stree { background: url(images/stree.png) no-repeat scroll 5px center }
+.right_menu p.view_vtree, .right_menu p.view_htree, .right_menu p.view_parent, .right_menu p.view_root { background: url(images/child.png) no-repeat scroll 5px center}
+.right_menu p:hover { background-color: #fff }
+
+/* end right menu */
+#float_panel {width: 26px; height: 25px; background: url(images/extend.jpg) no-repeat scroll center center; border: 1px solid #DC5800; position: absolute; z-index: 120; left: 0; top: 0; opacity: 0.8 }
+#float_panel:hover{cursor: pointer; border-color: #fff; transition: all 0.2s linear; opacity: 1.0}
+#tree_guide { position: fixed; width: 300px; font-size:12px; font-family: arial; float: right; top: 97px; right: 0px; z-index: 150; border: 1px solid #000; background-color:#FAEA9C; display: none }
+#tree_guide .r_title { text-align: right }
+h2.optbox_title { padding: 5px; color: #fff; font-weight: bold; font-size: 12px; margin: 1px 1px 5px 1px; background: #74211E url(images/close.png) no-repeat scroll right center; cursor: pointer }
+.guide_content { padding: 5px 3px 10px 20px }
+.guide_content ul {padding: 0; margin: 0; list-style-type: circle !important}
+.guide_content li { padding: 3px 3px 3px 8px}
+
+.frm_loadstatus { position: absolute; left: 0px; z-index: 300; width: 100%; height: 420px; background: #fff url(../../img/utils/tloading.gif) scroll no-repeat center center; opacity: 0.9}
+.bold {font-weight:bold}
+#memhis {overflow-y:scroll; height: 330px}
+.tbl_data td {vertical-align: top}
+
+/* Cay dung */
+span.tree-icon {display:none}
+#ftree .trleaf { overflow: hidden; min-width: 200px; background-color: #FDDC4C; margin: 2px 1px; padding: 2px; border-radius: 3px}
+#ftree .trleaf img { width: 34px; height: 36px; margin-right: 10px; float: left }
+#ftree .trleaf p:first-child {font-weight: bold}
+#ftree .trleaf p:last-child { color:gray }
+#ftree .trleaf p { padding: 2px 0 0 0; margin: 0 }
+#ftree .minfo { float:left; padding-right:10px }
+
+.familytree h2 {text-align: center}
+#ftree {position: relative; left: 350px}

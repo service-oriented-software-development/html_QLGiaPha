@@ -1,0 +1,33 @@
+body {
+}
+
+/* Dialog */
+.dialog {display: none}
+.dlg_title { color: #000; font-weight: bold; padding: 8px 5px; font-size: 14px; border-radius: 8px 8px 0 0;
+background: rgb(228,245,252); /* Old browsers */
+background: -moz-linear-gradient(top, rgba(228,245,252,1) 0%, rgba(191,232,249,1) 50%, rgba(159,216,239,1) 51%, rgba(42,176,237,1) 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(top, rgba(228,245,252,1) 0%,rgba(191,232,249,1) 50%,rgba(159,216,239,1) 51%,rgba(42,176,237,1) 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to bottom, rgba(228,245,252,1) 0%,rgba(191,232,249,1) 50%,rgba(159,216,239,1) 51%,rgba(42,176,237,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e4f5fc', endColorstr='#2ab0ed',GradientType=0 ); /* IE6-9 */
+}
+.pn_toolbar { border-bottom: 1px solid #ccc; overflow: hidden; padding: 5px 0 }
+img.tb_cmd {float: left; margin-right: 5px; border: 1px solid #ccc; cursor: pointer; width: 20px; height: 20px; padding: 2px}
+img.tb_cmd:hover {border: 1px solid #000}
+
+#ires_msg {float: right; padding: 5px}
+#iloading { height: 26px; margin-right: 20px; float: right }
+#iprogressbar { border: 1px solid green; background-repeat: repeat-x; border-radius: 5px; padding: 1px; float: right; width: 100px; margin-right: 10px }
+#iprogressbar > div { background-color: green; width: 0%; height: 21px; border-radius: 4px; }
+.pn_toolbar p.success {color: green}
+.pn_toolbar p.error {color: red}
+
+#ifolder_content a.active {opacity: 0.5; color: red}
+#ifolder_content a.active img {border-color: red}
+ #ifolder_content img.active {opacity: 0.5; color: red;border-color: red}
+.lst_lib_item {padding-top: 10px; background-color: #fff}
+.lst_lib_item { overflow-y: scroll; width: 100%; height: 410px }
+.lst_lib_item div {float: left; width:90px; height: 120px; padding: 5px; overflow: hidden; text-align: center; margin: 5px;}
+.lst_lib_item div input { background: none; width: 100%; margin-top: 5px; height: 17px }
+.lst_lib_item img {height: 60px; border: 1px solid #ccc}
+.lst_lib_item img:hover {border-color: #000}
+.lst_lib_item p {padding: 5px 0}

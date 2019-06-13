@@ -1,0 +1,48 @@
+*{margin:0; padding:0}
+
+/*Header*/
+.ft_headlay1 { background: url(images/ft_loopbg.png) repeat-x scroll center center; height: 80px; width:100%; overflow: hidden; font-family: arial; position: fixed; z-index:100; }
+.ft_headlay2 { background: url(images/ft_cenbg.png) no-repeat scroll center center; height: 80px; width:100%; text-align:center; overflow: hidden; }
+.sub_info { top: 80px; position: fixed; z-index: 100; font-family: arial }
+.sub_info td { vertical-align: top; height: 65px; color: #fff; text-align: center; text-transform: uppercase; padding-top: 2px; font-weight: bold }
+.sub_info td a { color: #fff !important; text-decoration: none }
+.sub_info td.subleft { background:url(images/subinfo_left.png) no-repeat scroll right top; min-width: 342px; font-size: 11px }
+.sub_info td.subcen { background:url(images/subinfo_cen.png) no-repeat scroll center top; width: 602px}
+.sub_info td.subright { background:url(images/subinfo_right.png) no-repeat scroll left top; min-width: 342px; font-size: 11px; text-transform:none}
+.sub_info td.subcen p { margin: 0; padding: 5px 15px; font-size: 12px; color: yellow }
+.sub_info td.subright p.creator { margin: 0; float: left; padding: 0 10px; text-align: left; width: 220px }
+.sub_info td.subright p.option { margin: 0; padding: 0 10px; float: left; }
+a.tree_option { text-decoration: underline !important; display: inline-block; padding-left: 18px; background: url(images/options.png) no-repeat scroll left center }
+
+.sub_info .sub1 { width: 280px; border: 1px solid #000; }
+.sub_info .sub3 { width: 280px; border: 1px solid #000 }
+.sub_info .sub2 { width: 550px; border: 1px solid #000; margin: 0 auto }
+
+/* user control panel */
+a.ucptree_option { position: relative; left: 80px;text-decoration: underline !important; display: inline-block; padding-left: 18px !important; background: url(images/options.png) no-repeat scroll left center;}
+
+.ucp_rm { position: absolute; display: none; width: 180px; height: 190px; background: #E7DD99 url(images/ct_bg.png) no-repeat scroll center center; border: 1px solid #DC5800; border-radius: 5px; font-family: arial}
+.ucp_rm h4.rm_title { font-size: 12px; font-weight: bold; color: white; margin: 0 0 6px 0; padding: 5px; background: linear-gradient(90deg, red, white) }
+.ucp_rm h4 .closeInf {display:block; background: url(images/close.png) no-repeat scroll center center; width: 16px; height: 16px; position: relative; right: -3px; top: -3px; float: right}
+.ucp_rm p { margin: 0 1px; padding: 6px 3px 6px 25px; }
+
+.ucp_rm p a { font-size: 11px; text-decoration: none; color:#000 }
+.ucp_rm p a:hover { color: red }
+.ucp_rm p.add_mem { background: url(images/addmem.png) no-repeat scroll 5px center }
+.ucp_rm p.edit_mem { background: url(images/editmem.png) no-repeat scroll 5px center }
+.ucp_rm p.del_mem { background: url(images/delete.png) no-repeat scroll 5px center }
+.ucp_rm p.take_into_tomb { background: url(images/edit.png) no-repeat scroll 5px center }
+.ucp_rm p.view_laters { background: url(images/child.png) no-repeat scroll 5px center }
+.ucp_rm p.view_stree { background: url(images/stree.png) no-repeat scroll 5px center }
+.ucp_rm p.view_vtree, .ucp_rm p.view_htree, .ucp_rm p.view_parent, .ucp_rm p.view_root { background: url(images/child.png) no-repeat scroll 5px center}
+.ucp_rm p:hover { background-color: #fff }
+
+/* end right menu */
+#float_panel {width: 26px; height: 25px; background: url(images/extend.jpg) no-repeat scroll center center; border: 1px solid #DC5800; position: absolute; z-index: 120; left: 0; top: 0; opacity: 0.8 }
+#float_panel:hover{cursor: pointer; border-color: #fff; transition: all 0.2s linear; opacity: 1.0}
+#tree_guide { position: fixed; width: 300px; font-size:12px; font-family: arial; float: right; top: 97px; right: 0px; z-index: 150; border: 1px solid #000; background-color:#FAEA9C; display: none }
+#tree_guide .r_title { text-align: right }
+h2.optbox_title { padding: 5px; color: #fff; font-weight: bold; font-size: 12px; margin: 1px 1px 5px 1px; background: #74211E url(images/close.png) no-repeat scroll right center; cursor: pointer }
+.guide_content { padding: 5px 3px 10px 20px }
+.guide_content ul {padding: 0; margin: 0; list-style-type: circle !important}
+.guide_content li { padding: 3px 3px 3px 8px}

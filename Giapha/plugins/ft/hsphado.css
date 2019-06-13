@@ -1,0 +1,20 @@
+*{margin:0; padding:0}
+
+.ucp_def_header { position: absolute; width: 100%; z-index: 100; }
+.ucp_def_left {position: absolute; z-index: 100; top: 130px}
+.ucp_def_right {width: 100%}
+
+/*tree*/
+.node { cursor: pointer; }
+.overlay{ background-color:#fff; }
+.node circle { fill: #fff; stroke: steelblue; stroke-width: 1.5px; }
+.node rect { fill: #FDDF6D; }
+.node .outside {fill: #fff}
+.node div.bound { background: url(images/mframe.png) no-repeat scroll center center; width: 58px; height: 90px }
+.node text { font-size:10px; font-family:sans-serif; white-space:nowrap }
+.node p.fullname { width: 98%; font-size:8px; text-align: center; font-family:arial}
+.node p.nsnm { width: 98%; font-size:8px; text-align: center; font-family:arial }
+.link { fill: none; stroke: #000; stroke-width: 1.5px; }
+.templink { fill: none; stroke: red; stroke-width: 3px; }
+.ghostCircle.show{ display:block; }
+.ghostCircle, .activeDrag .ghostCircle{ display: none; }

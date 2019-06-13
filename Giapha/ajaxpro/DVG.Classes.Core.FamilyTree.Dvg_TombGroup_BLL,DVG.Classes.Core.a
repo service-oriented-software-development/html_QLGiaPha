@@ -1,0 +1,19 @@
+if(typeof GPVN == "undefined") GPVN={};
+if(typeof GPVN.System == "undefined") GPVN.System={};
+if(typeof GPVN.System.API == "undefined") GPVN.System.API={};
+if(typeof GPVN.System.API.QLNTTT_class == "undefined") GPVN.System.API.QLNTTT_class={};
+GPVN.System.API.QLNTTT_class = function() {};
+Object.extend(GPVN.System.API.QLNTTT_class.prototype, Object.extend(new AjaxPro.AjaxClass(), {
+	InsertTG: function(name, order, pageCode) {
+		return this.invoke("InsertTG", {"name":name, "order":order, "pageCode":pageCode}, this.InsertTG.getArguments().slice(3));
+	},
+	Ucp_ShowTG_All: function() {
+		return this.invoke("Ucp_ShowTG_All", {}, this.Ucp_ShowTG_All.getArguments().slice(0));
+	},
+	Ucp_ShowTGList: function(page_index, keyword) {
+		return this.invoke("Ucp_ShowTGList", {"page_index":page_index, "keyword":keyword}, this.Ucp_ShowTGList.getArguments().slice(2));
+	},
+	url: '/ajaxpro/DVG.Classes.Core.FamilyTree.Dvg_TombGroup_BLL,DVG.Classes.Core.ashx'
+}));
+GPVN.System.API.QLNTTT = new GPVN.System.API.QLNTTT_class();
+
