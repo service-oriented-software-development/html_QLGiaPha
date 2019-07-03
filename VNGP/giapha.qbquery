@@ -71,3 +71,5 @@ CREATE TABLE image(
     FOREIGN KEY (parentage_id) REFERENCES parentage(parentage_id)
     ON DELETE CASCADE ON UPDATE CASCADE
 );
+
+alter table individual add avatar varchar(100) after parentage_id;
